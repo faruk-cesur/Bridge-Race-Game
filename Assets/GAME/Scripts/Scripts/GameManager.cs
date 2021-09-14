@@ -3,7 +3,7 @@ using UnityEngine;
 
 public enum GameState
 {
-    Prepare,
+    PrepareGame,
     MainGame,
     LoseGame,
     WinGame
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         {
             switch (value)
             {
-                case GameState.Prepare:
+                case GameState.PrepareGame:
                     break;
                 case GameState.MainGame:
                     break;
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         }
 
-        CurrentGameState = GameState.Prepare;
+        CurrentGameState = GameState.PrepareGame;
     }
 /*
     public void StartGame()

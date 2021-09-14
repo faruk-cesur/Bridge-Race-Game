@@ -53,9 +53,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: BalooBhai-Regular SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 1902107595
   material: {fileID: 7671857109611666664}
-  materialHashCode: 0
+  materialHashCode: 1010048011
   m_Version: 1.1.0
   m_SourceFontFileGUID: b49df7e66f1d62d40b99aef7b2ced05c
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: b49df7e66f1d62d40b99aef7b2ced05c,
@@ -2645,12 +2645,12 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.35
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0

@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
     {
         switch (GameManager.Instance.CurrentGameState)
         {
-            case GameState.Prepare:
+            case GameState.PrepareGame:
                 StartGameUI();
                 UpdateGoldInfo();
                 break;
