@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip collectableSound, loseGameSound, winGameSound;
 
-    private AudioSource _audioSource;
+    public AudioSource audioSource;
 
 
     private void Awake()
@@ -22,13 +22,13 @@ public class SoundManager : MonoBehaviour
             Destroy(this);
         }
 
-        _audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
 
     public void PlaySound(AudioClip clip, float volume)
     {
-        _audioSource.PlayOneShot(clip, volume);
+        audioSource.PlayOneShot(clip, volume);
     }
 
     public IEnumerator LoseGameSound()

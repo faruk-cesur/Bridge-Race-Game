@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     {
         switch (GameManager.Instance.CurrentGameState)
         {
-            case GameState.PrepareGame:
+            case GameState.StartGame:
                 AnimationController.Instance.IdleAnimation();
                 break;
             case GameState.MainGame:

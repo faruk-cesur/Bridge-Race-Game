@@ -6,7 +6,7 @@ public class AnimationController : MonoBehaviour
 {
     public static AnimationController Instance;
 
-    [SerializeField] Animator animator;
+    [SerializeField] private Animator _animator;
 
     private void Awake()
     {
@@ -22,25 +22,27 @@ public class AnimationController : MonoBehaviour
 
     public void IdleAnimation()
     {
-        animator.SetBool("idle", true);
-        animator.SetBool("running", false);
+        _animator.applyRootMotion = true;
+        _animator.SetBool("Idle", true);
+        _animator.SetBool("Run", false);
     }
 
     public void RunAnimation()
     {
-        animator.SetBool("idle", false);
-        animator.SetBool("running", true);
+        _animator.applyRootMotion = false;
+        _animator.SetBool("Idle", false);
+        _animator.SetBool("Run", true);
+    }
+    
+    public void WinAnimation()
+    {
+        _animator.SetBool("Run", false);
+        _animator.SetBool("Win", true);
     }
 
-    public void LoseGameAnimation()
+    public void LoseAnimation()
     {
-        animator.SetBool("running", false);
-        animator.SetBool("death", true);
-    }
-
-    public void WinGameAnimation()
-    {
-        animator.SetBool("running", false);
-        animator.SetBool("victory", true);
+        _animator.SetBool("Run", false);
+        _animator.SetBool("Lose", true);
     }
 }

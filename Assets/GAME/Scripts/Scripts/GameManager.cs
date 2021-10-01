@@ -3,7 +3,7 @@ using UnityEngine;
 
 public enum GameState
 {
-    PrepareGame,
+    StartGame,
     MainGame,
     LoseGame,
     WinGame
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         {
             switch (value)
             {
-                case GameState.PrepareGame:
+                case GameState.StartGame:
                     break;
                 case GameState.MainGame:
                     break;
@@ -49,14 +49,14 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         }
 
-        CurrentGameState = GameState.PrepareGame;
+        CurrentGameState = GameState.StartGame;
     }
-/*
+
     public void StartGame()
     {
         CurrentGameState = GameState.MainGame;
         UIManager.Instance.MainGameUI();
-        AnimationController.Instance.RunAnimation();
+        CameraManager.Instance.MainGameCamera();
     }
 
     public void RestartGame()
@@ -64,20 +64,17 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.RetryButton();
     }
 
-    public void NextLevel()
-    {
-        UIManager.Instance.NextLevelButton();
-    }
-
     public void LoseGame()
     {
+        CameraManager.Instance.LoseGameCamera();
+        CurrentGameState = GameState.LoseGame;
         StartCoroutine(UIManager.Instance.DurationLoseGameUI());
     }
 
     public void WinGame()
     {
-        UIManager.Instance.WinGameUI();
+        UIManager.Instance.UpdateGoldInfo();
+        CurrentGameState = GameState.WinGame;
+        StartCoroutine(UIManager.Instance.DurationWinGameUI());
     }
-    
- */
 }
