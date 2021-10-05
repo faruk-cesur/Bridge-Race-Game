@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     #region Fields
 
+    [SerializeField] private GameObject playerModel;
+
     #endregion
 
     private void Update()
@@ -16,11 +18,14 @@ public class PlayerController : MonoBehaviour
                 AnimationController.Instance.IdleAnimation();
                 break;
             case GameState.MainGame:
-
+                ResetPlayerTransform();
+                AnimationController.Instance.RunAnimation();
                 break;
             case GameState.LoseGame:
+                AnimationController.Instance.LoseAnimation();
                 break;
             case GameState.WinGame:
+                AnimationController.Instance.WinAnimation();
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -30,6 +35,14 @@ public class PlayerController : MonoBehaviour
     #region PlayerMovement
 
     #endregion
-    
-    
+
+    #region Methods
+
+    private void ResetPlayerTransform()
+    {
+        playerModel.transform.rotation = Quaternion.identity;
+        playerModel.transform.position = new Vector3(0, 0, -6);
+    }
+
+    #endregion
 }
