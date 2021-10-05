@@ -292,6 +292,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -422,7 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa59ff3b42164b5eabd99748857fbf25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 8592876449711865404}
+  _animator: {fileID: 8592876449711865404}
 --- !u!1 &8592876449704463764
 GameObject:
   m_ObjectHideFlags: 0

@@ -171,3 +171,4 @@ Material:
     - _ShadowColor: {r: 0.22745098, g: 0, b: 0.36862746, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _TranslucentColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_BuildTextureStacks: []
