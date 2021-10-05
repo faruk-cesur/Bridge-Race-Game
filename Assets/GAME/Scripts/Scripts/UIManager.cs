@@ -16,9 +16,8 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI currentGoldText,
         earnedGoldText,
-        earnedGoldBonusText,
+        earnedExtraGoldText,
         getExtraGoldText,
-        getGoldText,
         prepareTotalGoldText,
         winTotalGoldText,
         sliderLevelText;
@@ -32,8 +31,7 @@ public class UIManager : MonoBehaviour
         _bonusPointArrow,
         _getGoldButton,
         _getBonusGoldButton,
-        _bonusXArrow,
-        _goldCoinPanel;
+        _bonusXArrow;
 
     [SerializeField] private List<GameObject> _goldenCoins;
 
@@ -143,7 +141,7 @@ public class UIManager : MonoBehaviour
     public void NextLevelButton()
     {
         PlayerPrefs.SetInt("SliderLevel", PlayerPrefs.GetInt("SliderLevel") + 1);
-        sliderLevelText.text = PlayerPrefs.GetInt("SliderLevel").ToString();
+        sliderLevelText.text = "LEVEL " + PlayerPrefs.GetInt("SliderLevel").ToString();
         StartCoroutine(LevelManager.Instance.NextLevel());
     }
 
@@ -205,25 +203,25 @@ public class UIManager : MonoBehaviour
         _anglerBonusArrowZ = anglerZ;
         if (anglerZ <= 360 && anglerZ >= 306f)
         {
-            earnedGoldBonusText.text = (gold * 2).ToString();
+            earnedExtraGoldText.text = (gold * 2).ToString();
             getExtraGoldText.text = "GET EXTRA X2";
         }
 
         if (anglerZ < 306f && anglerZ >= 250f)
         {
-            earnedGoldBonusText.text = (gold * 3).ToString();
+            earnedExtraGoldText.text = (gold * 3).ToString();
             getExtraGoldText.text = "GET EXTRA X3";
         }
 
         if (anglerZ < 250f && anglerZ >= 202f)
         {
-            earnedGoldBonusText.text = (gold * 4).ToString();
+            earnedExtraGoldText.text = (gold * 4).ToString();
             getExtraGoldText.text = "GET EXTRA X4";
         }
 
         if (anglerZ < 202f && anglerZ >= 180f)
         {
-            earnedGoldBonusText.text = (gold * 5).ToString();
+            earnedExtraGoldText.text = (gold * 5).ToString();
             getExtraGoldText.text = "GET EXTRA X5";
         }
     }
@@ -245,6 +243,6 @@ public class UIManager : MonoBehaviour
             PlayerPrefs.SetInt("SliderLevel", sliderLevel);
         }
 
-        sliderLevelText.text = PlayerPrefs.GetInt("SliderLevel").ToString();
+        sliderLevelText.text = "LEVEL " + PlayerPrefs.GetInt("SliderLevel").ToString();
     }
 }
