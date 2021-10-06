@@ -11,27 +11,15 @@ public enum BrickColors
 public class Brick : MonoBehaviour
 {
 
-    [OnValueChanged("Degistir")]
+    [OnValueChanged("CurrentColor")]
     public BrickColors color;
 
     [ReorderableList]
     [SerializeField] private List<Material> materials;
 
     [SerializeField] private MeshRenderer meshRenderer;
-// Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    
-    void Degistir()
+    private void CurrentColor()
     {
         switch (color)
         {
@@ -48,7 +36,5 @@ public class Brick : MonoBehaviour
                 meshRenderer.sharedMaterial = materials[3];
                 break;
         }
-            
-        
     }
 }

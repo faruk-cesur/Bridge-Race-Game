@@ -69,5 +69,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Brick brick = other.GetComponentInParent<Brick>();
+        if (brick.color == BrickColors.Blue)
+        {
+            UIManager.Instance.gold++;
+            Destroy(other.gameObject);
+        }
+    }
+
     #endregion
 }
