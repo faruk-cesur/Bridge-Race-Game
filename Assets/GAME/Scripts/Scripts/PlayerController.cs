@@ -11,12 +11,13 @@ public class PlayerController : MonoBehaviour
     public float angleSpeed;
 
     [SerializeField] private Transform _playerModel;
+    [SerializeField] private Transform _playerModelPelvis;
     [SerializeField] private FloatingJoystick _floatingJoystick;
 
     private Rigidbody _rigidbody;
     private bool _isGameStarted;
 
-    
+    private float brickHeight = 0.5f;
     
 
     #endregion
@@ -78,8 +79,10 @@ public class PlayerController : MonoBehaviour
         {
             brick.collectedBrick++;
             other.gameObject.GetComponentInChildren<Collider>().enabled = false;
-            other.gameObject.transform.SetParent(_playerModel);
-            other.gameObject.transform.DOMove(transform.position,1f);
+            other.gameObject.transform.SetParent(_playerModelPelvis);
+            other.gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
+            other.gameObject.transform.DOLocalMove(new Vector3(-0.4f,brickHeight,0f),0.5f);
+            brickHeight += 0.25f;
         }
     }
 

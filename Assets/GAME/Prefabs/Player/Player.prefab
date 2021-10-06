@@ -47,9 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f34bdffa6d4f2498196a9f2e4c763e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 4
-  angleSpeed: 0
-  _playerModel: {fileID: 7845406804406927501}
+  runSpeed: 5
+  angleSpeed: 5
+  _playerModel: {fileID: 7845406804406967535}
+  _playerModelPelvis: {fileID: 7845406804406967523}
   _floatingJoystick: {fileID: 0}
 --- !u!114 &1990727861594660787
 MonoBehaviour:
@@ -197,12 +198,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b5d591dbb72ac04a80d42bbb710cb7a, type: 3}
---- !u!1 &7845406804406927501 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8592876449704463762, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1990727861688847647}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7845406804406967535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8592876449704432112, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
@@ -212,6 +207,12 @@ Transform:
 --- !u!95 &7845406804414231331 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8592876449711865404, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1990727861688847647}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7845406804406967523 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8592876449704432124, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
     type: 3}
   m_PrefabInstance: {fileID: 1990727861688847647}
   m_PrefabAsset: {fileID: 0}

@@ -360,16 +360,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brick
       objectReference: {fileID: 0}
-    - target: {fileID: 5680237397792181806, guid: 561e096fda54b40efb571030aa3e8085,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7d27b8fc20da6c7459e9640286bae184, type: 2}
-    - target: {fileID: 8310287021912188079, guid: 561e096fda54b40efb571030aa3e8085,
-        type: 3}
-      propertyPath: color
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 561e096fda54b40efb571030aa3e8085, type: 3}
 --- !u!1001 &77131658
@@ -1864,12 +1854,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 41245089268300589, guid: 561e096fda54b40efb571030aa3e8085,
     type: 3}
   m_PrefabInstance: {fileID: 1305232899}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &547580947 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7845406804406967535, guid: 989a55ceff637504d8a6de8c541124dd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1990727861890094677}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &552999044
 PrefabInstance:
@@ -7553,16 +7537,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1990727861594660786, guid: 989a55ceff637504d8a6de8c541124dd,
-        type: 3}
-      propertyPath: angleSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1990727861594660786, guid: 989a55ceff637504d8a6de8c541124dd,
-        type: 3}
-      propertyPath: _playerModel
-      value: 
-      objectReference: {fileID: 547580947}
     - target: {fileID: 1990727861594660786, guid: 989a55ceff637504d8a6de8c541124dd,
         type: 3}
       propertyPath: _floatingJoystick
