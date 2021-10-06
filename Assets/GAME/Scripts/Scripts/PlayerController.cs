@@ -1,4 +1,5 @@
 ﻿using System;
+using DG.Tweening;
 using UnityEngine;
 
 
@@ -9,11 +10,13 @@ public class PlayerController : MonoBehaviour
     public float runSpeed;
     public float angleSpeed;
 
-    [SerializeField] private GameObject _playerModel;
+    [SerializeField] private Transform _playerModel;
     [SerializeField] private FloatingJoystick _floatingJoystick;
 
     private Rigidbody _rigidbody;
     private bool _isGameStarted;
+
+    
     
 
     #endregion
@@ -51,8 +54,7 @@ public class PlayerController : MonoBehaviour
     private void PlayerMovement()
     {
         _rigidbody.velocity = new Vector3(_floatingJoystick.Horizontal,0f,_floatingJoystick.Vertical) * runSpeed;
-        transform.rotation = Quaternion.Slerp(transform.rotation,transform.rotation = Quaternion.LookRotation((_floatingJoystick.Vertical * transform.forward + _floatingJoystick.Horizontal * transform.right).normalized), Time.fixedDeltaTime * angleSpeed);
-        //transform.eulerAngles = new Vector3(0,_floatingJoystick.Horizontal*180,0);
+        _playerModel.rotation = Quaternion.Slerp(_playerModel.rotation,_playerModel.rotation = Quaternion.LookRotation((_floatingJoystick.Vertical * transform.forward + _floatingJoystick.Horizontal * transform.right).normalized), Time.fixedDeltaTime * angleSpeed);
     }
 
     #endregion
@@ -74,8 +76,10 @@ public class PlayerController : MonoBehaviour
         Brick brick = other.GetComponentInParent<Brick>();
         if (brick.color == BrickColors.Blue)
         {
-            UIManager.Instance.gold++;
-            Destroy(other.gameObject);
+            brick.collectedBrick++;
+            other.gameObject.GetComponentInChildren<Collider>().enabled = false;
+            other.gameObject.transform.SetParent(_playerModel);
+            other.gameObject.transform.DOMove(transform.position,1f);
         }
     }
 

@@ -11,6 +11,8 @@ public enum BrickColors
 public class Brick : MonoBehaviour
 {
 
+    public int collectedBrick = 0;
+    
     [OnValueChanged("CurrentColor")]
     public BrickColors color;
 

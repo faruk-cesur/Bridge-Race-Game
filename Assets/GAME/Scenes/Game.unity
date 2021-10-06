@@ -1865,6 +1865,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1305232899}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &547580947 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7845406804406967535, guid: 989a55ceff637504d8a6de8c541124dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1990727861890094677}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &552999044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5077,7 +5083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 10, z: -8}
+  m_FollowOffset: {x: 0, y: 12, z: -10}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -7549,6 +7555,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1990727861594660786, guid: 989a55ceff637504d8a6de8c541124dd,
         type: 3}
+      propertyPath: angleSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990727861594660786, guid: 989a55ceff637504d8a6de8c541124dd,
+        type: 3}
+      propertyPath: _playerModel
+      value: 
+      objectReference: {fileID: 547580947}
+    - target: {fileID: 1990727861594660786, guid: 989a55ceff637504d8a6de8c541124dd,
+        type: 3}
       propertyPath: _floatingJoystick
       value: 
       objectReference: {fileID: 142891023}
@@ -9142,7 +9158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &4848184290219999620
 MonoBehaviour:
   m_ObjectHideFlags: 0
