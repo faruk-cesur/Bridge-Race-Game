@@ -37,7 +37,11 @@ public class PlayerController : MonoBehaviour
     
     private void PlayerMovement()
     {
-        characterController.CharacterMovement(_floatingJoystick.Horizontal, _floatingJoystick.Vertical, _playerModel);
+        if (GameManager.Instance.isRunning)
+        {
+            characterController.CharacterRotation(_floatingJoystick.Horizontal, _floatingJoystick.Vertical,_playerModel);
+        }
+        characterController.CharacterMovement(_floatingJoystick.Horizontal, _floatingJoystick.Vertical);
     }
 
     private void OnTriggerEnter(Collider other)

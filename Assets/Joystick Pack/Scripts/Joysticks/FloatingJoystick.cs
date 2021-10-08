@@ -17,6 +17,7 @@ public class FloatingJoystick : Joystick
         background.gameObject.SetActive(true);
         base.OnPointerDown(eventData);
         AnimationController.Instance.RunAnimation();
+        GameManager.Instance.isRunning = true;
     }
 
     public override void OnPointerUp(PointerEventData eventData)
@@ -24,5 +25,6 @@ public class FloatingJoystick : Joystick
         background.gameObject.SetActive(false);
         base.OnPointerUp(eventData);
         AnimationController.Instance.IdleAnimation();
+        GameManager.Instance.isRunning = false;
     }
 }

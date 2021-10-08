@@ -15,13 +15,16 @@ public class CharacterController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    public void CharacterMovement(float horizontalMove, float verticalMove, Transform playerModel)
+    public void CharacterMovement(float horizontalMove, float verticalMove)
     {
         _rigidbody.velocity = new Vector3(horizontalMove, 0f, verticalMove) * runSpeed;
+    }
 
+    public void CharacterRotation(float horizontalMove, float verticalMove, Transform playerModel)
+    {
         var rotation = playerModel.rotation;
         rotation = Quaternion.Slerp(rotation, rotation = Quaternion.LookRotation((verticalMove * transform.forward + horizontalMove * transform.right).normalized), Time.fixedDeltaTime * angleSpeed);
-        playerModel.rotation = rotation;
+        playerModel.rotation = rotation; 
     }
     
     public void ResetCharacterTransform(Transform playerModel)
