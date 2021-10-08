@@ -11,7 +11,9 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    private static GameManager _instance;
+    public static GameManager Instance => _instance;
+
 
     private GameState _currentGameState;
 
@@ -40,13 +42,13 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        if (_instance != null && _instance != this)
         {
-            Instance = this;
+            Destroy(gameObject);
         }
         else
         {
-            Destroy(this);
+            _instance = this;
         }
 
         CurrentGameState = GameState.StartGame;

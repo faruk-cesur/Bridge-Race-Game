@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static SoundManager Instance;
+    private static SoundManager _instance;
+    public static SoundManager Instance => _instance;
 
     public AudioClip collectableSound, loseGameSound, winGameSound;
 
@@ -13,15 +14,15 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        if (_instance != null && _instance != this)
         {
-            Instance = this;
+            Destroy(gameObject);
         }
         else
         {
-            Destroy(this);
+            _instance = this;
         }
-
+        
         audioSource = GetComponent<AudioSource>();
     }
 

@@ -47,8 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f34bdffa6d4f2498196a9f2e4c763e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 5
-  angleSpeed: 5
+  characterController: {fileID: 1990727861594660787}
   _playerModel: {fileID: 7845406804406967535}
   _playerModelPelvis: {fileID: 7845406804406967523}
   _floatingJoystick: {fileID: 0}
@@ -64,6 +63,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e734b47bd0db4856bccf0ffe5c2abdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  runSpeed: 5
+  angleSpeed: 5
 --- !u!54 &8571737802850486764
 Rigidbody:
   m_ObjectHideFlags: 0

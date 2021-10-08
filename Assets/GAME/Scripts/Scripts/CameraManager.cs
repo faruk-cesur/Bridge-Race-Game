@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public static Camera Cam;
-    public static CameraManager Instance;
+    private static CameraManager _instance;
+    public static CameraManager Instance => _instance;
 
     public GameObject prepareGameCam, mainGameCam, winGameCam, loseGameCam;
 
     private void Awake()
     {
-        Cam = Camera.main;
-        Instance = this;
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
     }
 
     private void Start()

@@ -10,7 +10,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager Instance;
+    private static UIManager _instance;
+    public static UIManager Instance => _instance;
 
     public PlayerController player;
 
@@ -41,13 +42,13 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        if (_instance != null && _instance != this)
         {
-            Instance = this;
+            Destroy(gameObject);
         }
         else
         {
-            Destroy(Instance);
+            _instance = this;
         }
     }
 

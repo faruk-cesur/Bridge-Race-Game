@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager Instance;
+    private static LevelManager _instance;
+    public static LevelManager Instance => _instance;
 
     public List<GameObject> levels;
 
@@ -15,13 +16,13 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        if (_instance != null && _instance != this)
         {
-            Instance = this;
+            Destroy(gameObject);
         }
         else
         {
-            Destroy(this);
+            _instance = this;
         }
     }
 

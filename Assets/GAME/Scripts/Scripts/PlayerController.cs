@@ -5,27 +5,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    #region Fields
-    
-    public float runSpeed;
-    public float angleSpeed;
+    public CharacterController characterController;
 
     [SerializeField] private Transform _playerModel;
     [SerializeField] private Transform _playerModelPelvis;
     [SerializeField] private FloatingJoystick _floatingJoystick;
 
-    private Rigidbody _rigidbody;
-    private bool _isGameStarted;
 
-    private float brickHeight = 0.5f;
-    
+    private float _brickHeight = 0.5f;
 
-    #endregion
-
-    private void Start()
-    {
-        _rigidbody = GetComponent<Rigidbody>();
-    }
 
     private void Update()
     {
@@ -35,7 +23,7 @@ public class PlayerController : MonoBehaviour
                 AnimationController.Instance.IdleAnimation();
                 break;
             case GameState.MainGame:
-                ResetPlayerTransform();
+                characterController.ResetCharacterTransform(_playerModel);
                 PlayerMovement();
                 AnimationController.Instance.RunAnimation();
                 break;
@@ -49,27 +37,10 @@ public class PlayerController : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
     }
-
-    #region PlayerMovement
-
+    
     private void PlayerMovement()
     {
-        _rigidbody.velocity = new Vector3(_floatingJoystick.Horizontal,0f,_floatingJoystick.Vertical) * runSpeed;
-        _playerModel.rotation = Quaternion.Slerp(_playerModel.rotation,_playerModel.rotation = Quaternion.LookRotation((_floatingJoystick.Vertical * transform.forward + _floatingJoystick.Horizontal * transform.right).normalized), Time.fixedDeltaTime * angleSpeed);
-    }
-
-    #endregion
-
-    #region Methods
-
-    private void ResetPlayerTransform()
-    {
-        if (!_isGameStarted)
-        {
-            _isGameStarted = true;
-            _playerModel.transform.localRotation = Quaternion.identity;
-            _playerModel.transform.localPosition = new Vector3(0, 0, 0);
-        }
+        characterController.PlayerMovement(_floatingJoystick.Horizontal, _floatingJoystick.Vertical, _playerModel);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -77,14 +48,12 @@ public class PlayerController : MonoBehaviour
         Brick brick = other.GetComponentInParent<Brick>();
         if (brick.color == BrickColors.Blue)
         {
-            brick.collectedBrick++;
+            brick.collectedBrickBlue++;
             other.gameObject.GetComponentInChildren<Collider>().enabled = false;
             other.gameObject.transform.SetParent(_playerModelPelvis);
             other.gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
-            other.gameObject.transform.DOLocalMove(new Vector3(-0.4f,brickHeight,0f),0.5f);
-            brickHeight += 0.25f;
+            other.gameObject.transform.DOLocalMove(new Vector3(-0.4f, _brickHeight, 0f), 0.5f);
+            _brickHeight += 0.25f;
         }
     }
-
-    #endregion
 }

@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    public static AnimationController Instance;
+    private static AnimationController _instance;
+    public static AnimationController Instance => _instance;
 
     [SerializeField] private Animator _animator;
 
     private void Awake()
     {
-        if (Instance != this)
+        if (_instance != null && _instance != this)
         {
-            Instance = this;
+            Destroy(gameObject);
         }
         else
         {
-            Destroy(this);
+            _instance = this;
         }
     }
 

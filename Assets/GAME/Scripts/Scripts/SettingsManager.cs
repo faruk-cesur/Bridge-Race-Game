@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class SettingsManager : MonoBehaviour
 {
-    public static SettingsManager Instance;
+    private static SettingsManager _instance;
+    public static SettingsManager Instance => _instance;
 
     public Slider sliderVibration;
     public Slider sliderAudio;
@@ -15,13 +16,13 @@ public class SettingsManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        if (_instance != null && _instance != this)
         {
-            Instance = this;
+            Destroy(gameObject);
         }
         else
         {
-            Destroy(Instance);
+            _instance = this;
         }
     }
 
