@@ -15,7 +15,7 @@ public class CharacterController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    public void PlayerMovement(float horizontalMove, float verticalMove, Transform playerModel)
+    public void CharacterMovement(float horizontalMove, float verticalMove, Transform playerModel)
     {
         _rigidbody.velocity = new Vector3(horizontalMove, 0f, verticalMove) * runSpeed;
 

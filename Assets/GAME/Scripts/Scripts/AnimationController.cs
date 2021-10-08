@@ -23,7 +23,7 @@ public class AnimationController : MonoBehaviour
 
     public void IdleAnimation()
     {
-        _animator.applyRootMotion = true;
+        _animator.applyRootMotion = false;
         _animator.SetBool("Idle", true);
         _animator.SetBool("Run", false);
     }
@@ -34,7 +34,11 @@ public class AnimationController : MonoBehaviour
         _animator.SetBool("Idle", false);
         _animator.SetBool("Run", true);
     }
-    
+
+    public void FallBackAnimation()
+    {
+        
+    }
     public void WinAnimation()
     {
         _animator.SetBool("Run", false);

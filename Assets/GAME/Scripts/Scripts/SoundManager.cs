@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip collectableSound, loseGameSound, winGameSound;
 
     public AudioSource audioSource;
+    
 
 
     private void Awake()

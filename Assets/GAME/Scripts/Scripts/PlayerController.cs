@@ -25,13 +25,10 @@ public class PlayerController : MonoBehaviour
             case GameState.MainGame:
                 characterController.ResetCharacterTransform(_playerModel);
                 PlayerMovement();
-                AnimationController.Instance.RunAnimation();
                 break;
             case GameState.LoseGame:
-                AnimationController.Instance.LoseAnimation();
                 break;
             case GameState.WinGame:
-                AnimationController.Instance.WinAnimation();
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -40,7 +37,7 @@ public class PlayerController : MonoBehaviour
     
     private void PlayerMovement()
     {
-        characterController.PlayerMovement(_floatingJoystick.Horizontal, _floatingJoystick.Vertical, _playerModel);
+        characterController.CharacterMovement(_floatingJoystick.Horizontal, _floatingJoystick.Vertical, _playerModel);
     }
 
     private void OnTriggerEnter(Collider other)
