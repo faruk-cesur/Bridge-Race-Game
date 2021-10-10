@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum GameState
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance => _instance;
 
     public bool isRunning;
+
+    public List<GameObject> collectedBrickBlueList;
 
     private GameState _currentGameState;
 
@@ -51,7 +54,6 @@ public class GameManager : MonoBehaviour
         {
             _instance = this;
         }
-
         CurrentGameState = GameState.StartGame;
     }
 

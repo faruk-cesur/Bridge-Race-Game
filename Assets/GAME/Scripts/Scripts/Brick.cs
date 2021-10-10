@@ -5,22 +5,18 @@ using UnityEngine;
 
 public enum BrickColors
 {
-    Blue,Green,Pink,Orange
+    Blue,
+    Green,
+    Pink,
+    Orange
 }
 
 public class Brick : MonoBehaviour
 {
-
-    public int collectedBrickBlue = 0;
-    public int collectedBrickGreen = 0;
-    public int collectedBrickPink = 0;
-    public int collectedBrickOrange = 0;
     
-    [OnValueChanged("CurrentColor")]
-    public BrickColors color;
+    [OnValueChanged("CurrentColor")] public BrickColors color;
 
-    [ReorderableList]
-    [SerializeField] private List<Material> materials;
+    [ReorderableList] [SerializeField] private List<Material> materials;
 
     [SerializeField] private MeshRenderer meshRenderer;
 
