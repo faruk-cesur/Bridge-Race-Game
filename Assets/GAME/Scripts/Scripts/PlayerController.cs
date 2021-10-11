@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _playerModel;
     [SerializeField] private Transform _playerModelPelvis;
     [SerializeField] private FloatingJoystick _floatingJoystick;
+    public List<Brick> collectedBrickListBlue;
 
     private float _brickHeight = 0.5f;
 
@@ -51,8 +53,8 @@ public class PlayerController : MonoBehaviour
         {
             if (brick.color == BrickColors.Blue)
             {
-                GameManager.Instance.collectedBrickBlueList.Add(other.gameObject);
-                _brickHeight = 0.25f+(GameManager.Instance.collectedBrickBlueList.Count * 0.25f);
+                collectedBrickListBlue.Add(other.gameObject.GetComponent<Brick>());
+                _brickHeight = 0.25f + (collectedBrickListBlue.Count * 0.25f);
                 other.gameObject.GetComponentInChildren<Collider>().enabled = false;
                 other.gameObject.transform.SetParent(_playerModelPelvis);
                 other.gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);

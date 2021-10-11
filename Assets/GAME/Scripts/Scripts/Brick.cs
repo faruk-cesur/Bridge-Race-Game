@@ -13,7 +13,6 @@ public enum BrickColors
 
 public class Brick : MonoBehaviour
 {
-    
     [OnValueChanged("CurrentColor")] public BrickColors color;
 
     [ReorderableList] [SerializeField] private List<Material> materials;

@@ -15,9 +15,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public static GameManager Instance => _instance;
 
-    public bool isRunning;
-
-    public List<GameObject> collectedBrickBlueList;
+   [HideInInspector] public bool isRunning;
 
     private GameState _currentGameState;
 
@@ -54,6 +52,7 @@ public class GameManager : MonoBehaviour
         {
             _instance = this;
         }
+
         CurrentGameState = GameState.StartGame;
     }
 

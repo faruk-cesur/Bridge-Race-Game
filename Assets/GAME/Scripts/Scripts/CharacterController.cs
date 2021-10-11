@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    [HideInInspector] public PlayerController player;
+
     public float runSpeed;
     public float angleSpeed;
 
@@ -13,6 +15,7 @@ public class CharacterController : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        player = GetComponent<PlayerController>();
     }
 
     public void CharacterMovement(float horizontalMove, float verticalMove)
@@ -24,9 +27,9 @@ public class CharacterController : MonoBehaviour
     {
         var rotation = playerModel.rotation;
         rotation = Quaternion.Slerp(rotation, rotation = Quaternion.LookRotation((verticalMove * transform.forward + horizontalMove * transform.right).normalized), Time.fixedDeltaTime * angleSpeed);
-        playerModel.rotation = rotation; 
+        playerModel.rotation = rotation;
     }
-    
+
     public void ResetCharacterTransform(Transform playerModel)
     {
         if (!_isGameStarted)
