@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9f052d9ce9b81942948eab7c7e26416, type: 2}
+  - {fileID: 2100000, guid: 6cb331b40250e734ca91a2cee1e51969, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140,17 +140,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b230c9ff74944d14856ff11406f33fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usedBridgeBlue: 0
-  usedBridgeGreen: 0
-  usedBridgePink: 0
-  usedBridgeOrange: 0
-  color: 0
   materials:
+  - {fileID: 2100000, guid: 6cb331b40250e734ca91a2cee1e51969, type: 2}
   - {fileID: 2100000, guid: c9f052d9ce9b81942948eab7c7e26416, type: 2}
   - {fileID: 2100000, guid: 0b298b9263420b74fabafe832866499f, type: 2}
   - {fileID: 2100000, guid: 7d3f4cbf39ac9cb47a0ed55c2c359cce, type: 2}
   - {fileID: 2100000, guid: f558712a5178b65468ee78bb5726d9b4, type: 2}
-  meshRenderer: {fileID: 3526821594604997323}
   parentObject: {fileID: 0}
   stairCollider: {fileID: 789384026}
 --- !u!65 &789384026
