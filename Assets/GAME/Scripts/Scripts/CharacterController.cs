@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 
@@ -38,6 +40,23 @@ public class CharacterController : MonoBehaviour
             var transform1 = playerModel.transform;
             transform1.localRotation = Quaternion.identity;
             transform1.localPosition = new Vector3(0, 0, 0);
+        }
+    }
+    
+    public void CharacterOnTriggerEnter(Collider other, float brickHeight, Transform playerModelPelvis, List<Brick> collectedBrickList, BrickColors color)
+    {
+        Brick brick = other.GetComponentInParent<Brick>();
+        if (brick)
+        {
+            if (brick.color == color)
+            {
+                collectedBrickList.Add(other.gameObject.GetComponent<Brick>());
+                brickHeight = 0.25f + (collectedBrickList.Count * 0.25f);
+                other.gameObject.GetComponentInChildren<Collider>().enabled = false;
+                other.gameObject.transform.SetParent(playerModelPelvis);
+                other.gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
+                other.gameObject.transform.DOLocalMove(new Vector3(-0.4f, brickHeight, 0f), 0.5f);
+            }
         }
     }
 }

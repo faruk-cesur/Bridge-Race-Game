@@ -40,7 +40,27 @@ public class Bridge : MonoBehaviour
                             character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.transform.position = BrickSpawner.Instance.bricksPositionList[i];
                         }
                     }
-
+                    character.player.collectedBrickListBlue.RemoveAt(character.player.collectedBrickListBlue.Count - 1);
+                }
+                
+                if (character.CompareTag("Green") && character.player.collectedBrickListBlue.Count > 0)
+                {
+                    _isCharacterTouch = true;
+                    var go = Instantiate(gameObject, new Vector3(transform.localPosition.x, transform.localPosition.y + 0.30f, transform.localPosition.z + 0.6f), transform.localRotation, bridgeParentObject.transform);
+                    go.GetComponentInChildren<MeshRenderer>().sharedMaterial = go.GetComponent<Bridge>().materials[1];
+                    stairCollider.enabled = false;
+                    character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.tag = "Empty";
+                    character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.transform.SetParent(brickParentObject.transform);
+                    character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+                    character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.GetComponent<Collider>().enabled = true;
+                    for (int i = 0; i < BrickSpawner.Instance.bricksList.Count; i++)
+                    {
+                        if (BrickSpawner.Instance.bricksList[i].CompareTag("Empty"))
+                        {
+                            BrickSpawner.Instance.bricksList[i].tag = "Untagged";
+                            character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.transform.position = BrickSpawner.Instance.bricksPositionList[i];
+                        }
+                    }
                     character.player.collectedBrickListBlue.RemoveAt(character.player.collectedBrickListBlue.Count - 1);
                 }
             }

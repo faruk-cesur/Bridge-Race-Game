@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         characterController.CharacterMovement(_floatingJoystick.Horizontal, _floatingJoystick.Vertical);
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         Brick brick = other.GetComponentInParent<Brick>();
         if (brick)
@@ -61,5 +61,10 @@ public class PlayerController : MonoBehaviour
                 other.gameObject.transform.DOLocalMove(new Vector3(-0.4f, _brickHeight, 0f), 0.5f);
             }
         }
+    }*/
+
+    private void OnTriggerEnter(Collider other)
+    {
+        characterController.CharacterOnTriggerEnter(other,_brickHeight,_playerModelPelvis,collectedBrickListBlue,BrickColors.Blue);
     }
 }
