@@ -8,6 +8,7 @@ TagManager:
   - Green
   - Pink
   - Orange
+  - Empty
   layers:
   - Default
   - TransparentFX

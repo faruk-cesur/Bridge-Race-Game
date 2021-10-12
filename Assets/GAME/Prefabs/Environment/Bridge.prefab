@@ -146,7 +146,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 0b298b9263420b74fabafe832866499f, type: 2}
   - {fileID: 2100000, guid: 7d3f4cbf39ac9cb47a0ed55c2c359cce, type: 2}
   - {fileID: 2100000, guid: f558712a5178b65468ee78bb5726d9b4, type: 2}
-  parentObject: {fileID: 0}
+  bridgeParentObject: {fileID: 0}
+  brickParentObject: {fileID: 0}
   stairCollider: {fileID: 789384026}
 --- !u!65 &789384026
 BoxCollider:
