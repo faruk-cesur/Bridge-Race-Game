@@ -8,10 +8,11 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController characterController;
 
+    public List<Brick> collectedBrickListBlue;
+
     [SerializeField] private Transform _playerModel;
     [SerializeField] private Transform _playerModelPelvis;
     [SerializeField] private FloatingJoystick _floatingJoystick;
-    public List<Brick> collectedBrickListBlue;
 
     private float _brickHeight = 0.5f;
 
@@ -45,24 +46,6 @@ public class PlayerController : MonoBehaviour
 
         characterController.CharacterMovement(_floatingJoystick.Horizontal, _floatingJoystick.Vertical);
     }
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        Brick brick = other.GetComponentInParent<Brick>();
-        if (brick)
-        {
-            if (brick.color == BrickColors.Blue)
-            {
-                collectedBrickListBlue.Add(other.gameObject.GetComponent<Brick>());
-                _brickHeight = 0.25f + (collectedBrickListBlue.Count * 0.25f);
-                other.gameObject.GetComponentInChildren<Collider>().enabled = false;
-                other.gameObject.transform.SetParent(_playerModelPelvis);
-                other.gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
-                other.gameObject.transform.DOLocalMove(new Vector3(-0.4f, _brickHeight, 0f), 0.5f);
-            }
-        }
-    }*/
-
     private void OnTriggerEnter(Collider other)
     {
         characterController.CharacterOnTriggerEnter(other,_brickHeight,_playerModelPelvis,collectedBrickListBlue,BrickColors.Blue);
