@@ -7,6 +7,9 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     [HideInInspector] public PlayerController player;
+    [HideInInspector] public CharacterGreen characterGreen;
+    [HideInInspector] public CharacterPink characterPink;
+    [HideInInspector] public CharacterOrange characterOrange;
 
     public float runSpeed;
     public float angleSpeed;
@@ -18,6 +21,9 @@ public class CharacterController : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         player = GetComponent<PlayerController>();
+        characterGreen = GetComponent<CharacterGreen>();
+        characterPink = GetComponent<CharacterPink>();
+        characterOrange = GetComponent<CharacterOrange>();
     }
 
     public void CharacterMovement(float horizontalMove, float verticalMove)
@@ -42,7 +48,7 @@ public class CharacterController : MonoBehaviour
             transform1.localPosition = new Vector3(0, 0, 0);
         }
     }
-    
+
     public void CharacterOnTriggerEnter(Collider other, float brickHeight, Transform playerModelPelvis, List<Brick> collectedBrickList, BrickColors color)
     {
         Brick brick = other.GetComponentInParent<Brick>();

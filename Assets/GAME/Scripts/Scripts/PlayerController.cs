@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
 
     private float _brickHeight = 0.5f;
 
-
     private void Update()
     {
         switch (GameManager.Instance.CurrentGameState)
@@ -46,8 +45,9 @@ public class PlayerController : MonoBehaviour
 
         characterController.CharacterMovement(_floatingJoystick.Horizontal, _floatingJoystick.Vertical);
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        characterController.CharacterOnTriggerEnter(other,_brickHeight,_playerModelPelvis,collectedBrickListBlue,BrickColors.Blue);
+        characterController.CharacterOnTriggerEnter(other, _brickHeight, _playerModelPelvis, collectedBrickListBlue, BrickColors.Blue);
     }
 }

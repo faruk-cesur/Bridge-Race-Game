@@ -40,28 +40,74 @@ public class Bridge : MonoBehaviour
                             character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.transform.position = BrickSpawner.Instance.bricksPositionList[i];
                         }
                     }
+
                     character.player.collectedBrickListBlue.RemoveAt(character.player.collectedBrickListBlue.Count - 1);
                 }
-                
-                if (character.CompareTag("Green") && character.player.collectedBrickListBlue.Count > 0)
+
+                if (character.CompareTag("Green") && character.characterGreen.collectedBrickListGreen.Count > 0)
                 {
                     _isCharacterTouch = true;
                     var go = Instantiate(gameObject, new Vector3(transform.localPosition.x, transform.localPosition.y + 0.30f, transform.localPosition.z + 0.6f), transform.localRotation, bridgeParentObject.transform);
-                    go.GetComponentInChildren<MeshRenderer>().sharedMaterial = go.GetComponent<Bridge>().materials[1];
+                    go.GetComponentInChildren<MeshRenderer>().sharedMaterial = go.GetComponent<Bridge>().materials[2];
                     stairCollider.enabled = false;
-                    character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.tag = "Empty";
-                    character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.transform.SetParent(brickParentObject.transform);
-                    character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
-                    character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.GetComponent<Collider>().enabled = true;
+                    character.characterGreen.collectedBrickListGreen[character.characterGreen.collectedBrickListGreen.Count - 1].gameObject.tag = "Empty";
+                    character.characterGreen.collectedBrickListGreen[character.characterGreen.collectedBrickListGreen.Count - 1].gameObject.transform.SetParent(brickParentObject.transform);
+                    character.characterGreen.collectedBrickListGreen[character.characterGreen.collectedBrickListGreen.Count - 1].gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+                    character.characterGreen.collectedBrickListGreen[character.characterGreen.collectedBrickListGreen.Count - 1].gameObject.GetComponent<Collider>().enabled = true;
                     for (int i = 0; i < BrickSpawner.Instance.bricksList.Count; i++)
                     {
                         if (BrickSpawner.Instance.bricksList[i].CompareTag("Empty"))
                         {
                             BrickSpawner.Instance.bricksList[i].tag = "Untagged";
-                            character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.transform.position = BrickSpawner.Instance.bricksPositionList[i];
+                            character.characterGreen.collectedBrickListGreen[character.characterGreen.collectedBrickListGreen.Count - 1].gameObject.transform.position = BrickSpawner.Instance.bricksPositionList[i];
                         }
                     }
-                    character.player.collectedBrickListBlue.RemoveAt(character.player.collectedBrickListBlue.Count - 1);
+
+                    character.characterGreen.collectedBrickListGreen.RemoveAt(character.characterGreen.collectedBrickListGreen.Count - 1);
+                }
+
+                if (character.CompareTag("Pink") && character.characterPink.collectedBrickListPink.Count > 0)
+                {
+                    _isCharacterTouch = true;
+                    var go = Instantiate(gameObject, new Vector3(transform.localPosition.x, transform.localPosition.y + 0.30f, transform.localPosition.z + 0.6f), transform.localRotation, bridgeParentObject.transform);
+                    go.GetComponentInChildren<MeshRenderer>().sharedMaterial = go.GetComponent<Bridge>().materials[3];
+                    stairCollider.enabled = false;
+                    character.characterPink.collectedBrickListPink[character.characterPink.collectedBrickListPink.Count - 1].gameObject.tag = "Empty";
+                    character.characterPink.collectedBrickListPink[character.characterPink.collectedBrickListPink.Count - 1].gameObject.transform.SetParent(brickParentObject.transform);
+                    character.characterPink.collectedBrickListPink[character.characterPink.collectedBrickListPink.Count - 1].gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+                    character.characterPink.collectedBrickListPink[character.characterPink.collectedBrickListPink.Count - 1].gameObject.GetComponent<Collider>().enabled = true;
+                    for (int i = 0; i < BrickSpawner.Instance.bricksList.Count; i++)
+                    {
+                        if (BrickSpawner.Instance.bricksList[i].CompareTag("Empty"))
+                        {
+                            BrickSpawner.Instance.bricksList[i].tag = "Untagged";
+                            character.characterPink.collectedBrickListPink[character.characterPink.collectedBrickListPink.Count - 1].gameObject.transform.position = BrickSpawner.Instance.bricksPositionList[i];
+                        }
+                    }
+
+                    character.characterPink.collectedBrickListPink.RemoveAt(character.characterPink.collectedBrickListPink.Count - 1);
+                }
+
+                if (character.CompareTag("Orange") && character.characterOrange.collectedBrickListOrange.Count > 0)
+                {
+                    _isCharacterTouch = true;
+                    var go = Instantiate(gameObject, new Vector3(transform.localPosition.x, transform.localPosition.y + 0.30f, transform.localPosition.z + 0.6f), transform.localRotation, bridgeParentObject.transform);
+                    go.GetComponentInChildren<MeshRenderer>().sharedMaterial = go.GetComponent<Bridge>().materials[4];
+                    stairCollider.enabled = false;
+                    character.characterOrange.collectedBrickListOrange[character.characterOrange.collectedBrickListOrange.Count - 1].gameObject.tag = "Empty";
+                    character.characterOrange.collectedBrickListOrange[character.characterOrange.collectedBrickListOrange.Count - 1].gameObject.transform.SetParent(brickParentObject.transform);
+                    character.characterOrange.collectedBrickListOrange[character.characterOrange.collectedBrickListOrange.Count - 1].gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+                    character.characterOrange.collectedBrickListOrange[character.characterOrange.collectedBrickListOrange.Count - 1].gameObject.GetComponent<Collider>().enabled = true;
+                    for (int i = 0; i < BrickSpawner.Instance.bricksList.Count; i++)
+                    {
+                        if (BrickSpawner.Instance.bricksList[i].CompareTag("Empty"))
+                        {
+                            BrickSpawner.Instance.bricksList[i].tag = "Untagged";
+                            character.characterOrange.collectedBrickListOrange[character.characterOrange.collectedBrickListOrange.Count - 1].gameObject.transform.position = BrickSpawner.Instance.bricksPositionList[i];
+                        }
+                    }
+
+                    character.characterOrange.collectedBrickListOrange.RemoveAt(character.characterOrange.collectedBrickListOrange.Count - 1);
                 }
             }
         }
