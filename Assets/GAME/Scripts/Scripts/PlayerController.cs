@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        characterController.CharacterOnTriggerEnter(other, _brickHeight, _playerModelPelvis, collectedBrickListBlue, BrickColors.Blue);
+        characterController.CollectBrickTrigger(other, _brickHeight, _playerModelPelvis, collectedBrickListBlue, BrickColors.Blue);
+        StartCoroutine(characterController.LastBridgeTrigger(other));
     }
 }

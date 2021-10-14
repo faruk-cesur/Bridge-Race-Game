@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -49,7 +50,7 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    public void CharacterOnTriggerEnter(Collider other, float brickHeight, Transform playerModelPelvis, List<Brick> collectedBrickList, BrickColors color)
+    public void CollectBrickTrigger(Collider other, float brickHeight, Transform playerModelPelvis, List<Brick> collectedBrickList, BrickColors color)
     {
         Brick brick = other.GetComponentInParent<Brick>();
         if (brick)
@@ -63,6 +64,20 @@ public class CharacterController : MonoBehaviour
                 other.gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
                 other.gameObject.transform.DOLocalMove(new Vector3(-0.4f, brickHeight, 0f), 0.5f);
             }
+        }
+    }
+
+    public IEnumerator LastBridgeTrigger(Collider other)
+    {
+        FinishBridgeTrigger finishBridgeTrigger = other.GetComponentInParent<FinishBridgeTrigger>();
+
+        if (finishBridgeTrigger)
+        {
+            gameObject.GetComponent<Collider>().enabled = false;
+            gameObject.transform.DOMove(new Vector3(transform.position.x, transform.position.y +0.20f, transform.position.z + 2),0.5f);
+            other.gameObject.GetComponent<Collider>().isTrigger = false;
+            yield return new WaitForSeconds(0.5f);
+            gameObject.GetComponent<Collider>().enabled = true;
         }
     }
 }

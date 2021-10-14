@@ -42,6 +42,6 @@ public class CharacterGreen : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        characterController.CharacterOnTriggerEnter(other, _brickHeight, _playerModelPelvis, collectedBrickListGreen, BrickColors.Green);
+        characterController.CollectBrickTrigger(other, _brickHeight, _playerModelPelvis, collectedBrickListGreen, BrickColors.Green);
     }
 }

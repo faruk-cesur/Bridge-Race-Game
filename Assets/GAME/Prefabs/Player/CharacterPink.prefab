@@ -111,7 +111,7 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 8a1e904254500e3469f75ee457446122, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
+  m_Radius: 0.2
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
@@ -144,7 +144,6 @@ MonoBehaviour:
   collectedBrickListPink: []
   _playerModel: {fileID: 8106577269995219147}
   _playerModelPelvis: {fileID: 8106577269995219143}
-  _floatingJoystick: {fileID: 0}
 --- !u!1 &7295054014167841858
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,8 +309,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8106577269995219147}
-  - component: {fileID: 8106577270002730759}
-  - component: {fileID: 558550296450605685}
   m_Layer: 0
   m_Name: StickmanPink
   m_TagString: Untagged
@@ -336,38 +333,6 @@ Transform:
   m_Father: {fileID: 558550296708278651}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &8106577270002730759
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8106577269995451561}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: fa7f36c71b9e8fa4798df3a931c2fd92, type: 3}
-  m_Controller: {fileID: 9100000, guid: 672ee702f55a18c40ab63be94a731e35, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &558550296450605685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8106577269995451561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa59ff3b42164b5eabd99748857fbf25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 8106577270002730759}
 --- !u!1 &8106577269995451563
 GameObject:
   m_ObjectHideFlags: 0

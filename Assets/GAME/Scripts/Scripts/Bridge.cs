@@ -25,7 +25,7 @@ public class Bridge : MonoBehaviour
                 if (character.CompareTag("Blue") && character.player.collectedBrickListBlue.Count > 0)
                 {
                     _isCharacterTouch = true;
-                    var go = Instantiate(gameObject, new Vector3(transform.localPosition.x, transform.localPosition.y + 0.30f, transform.localPosition.z + 0.6f), transform.localRotation, bridgeParentObject.transform);
+                    var go = Instantiate(gameObject, new Vector3(transform.position.x, transform.position.y + 0.30f, transform.position.z + 0.6f), transform.rotation, bridgeParentObject.transform);
                     go.GetComponentInChildren<MeshRenderer>().sharedMaterial = go.GetComponent<Bridge>().materials[1];
                     stairCollider.enabled = false;
                     character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.tag = "Empty";
@@ -47,7 +47,7 @@ public class Bridge : MonoBehaviour
                 if (character.CompareTag("Green") && character.characterGreen.collectedBrickListGreen.Count > 0)
                 {
                     _isCharacterTouch = true;
-                    var go = Instantiate(gameObject, new Vector3(transform.localPosition.x, transform.localPosition.y + 0.30f, transform.localPosition.z + 0.6f), transform.localRotation, bridgeParentObject.transform);
+                    var go = Instantiate(gameObject, new Vector3(transform.position.x, transform.position.y + 0.30f, transform.position.z + 0.6f), transform.rotation, bridgeParentObject.transform);
                     go.GetComponentInChildren<MeshRenderer>().sharedMaterial = go.GetComponent<Bridge>().materials[2];
                     stairCollider.enabled = false;
                     character.characterGreen.collectedBrickListGreen[character.characterGreen.collectedBrickListGreen.Count - 1].gameObject.tag = "Empty";
@@ -69,7 +69,7 @@ public class Bridge : MonoBehaviour
                 if (character.CompareTag("Pink") && character.characterPink.collectedBrickListPink.Count > 0)
                 {
                     _isCharacterTouch = true;
-                    var go = Instantiate(gameObject, new Vector3(transform.localPosition.x, transform.localPosition.y + 0.30f, transform.localPosition.z + 0.6f), transform.localRotation, bridgeParentObject.transform);
+                    var go = Instantiate(gameObject, new Vector3(transform.position.x, transform.position.y + 0.30f, transform.position.z + 0.6f), transform.rotation, bridgeParentObject.transform);
                     go.GetComponentInChildren<MeshRenderer>().sharedMaterial = go.GetComponent<Bridge>().materials[3];
                     stairCollider.enabled = false;
                     character.characterPink.collectedBrickListPink[character.characterPink.collectedBrickListPink.Count - 1].gameObject.tag = "Empty";
@@ -91,7 +91,7 @@ public class Bridge : MonoBehaviour
                 if (character.CompareTag("Orange") && character.characterOrange.collectedBrickListOrange.Count > 0)
                 {
                     _isCharacterTouch = true;
-                    var go = Instantiate(gameObject, new Vector3(transform.localPosition.x, transform.localPosition.y + 0.30f, transform.localPosition.z + 0.6f), transform.localRotation, bridgeParentObject.transform);
+                    var go = Instantiate(gameObject, new Vector3(transform.position.x, transform.position.y + 0.30f, transform.position.z + 0.6f), transform.rotation, bridgeParentObject.transform);
                     go.GetComponentInChildren<MeshRenderer>().sharedMaterial = go.GetComponent<Bridge>().materials[4];
                     stairCollider.enabled = false;
                     character.characterOrange.collectedBrickListOrange[character.characterOrange.collectedBrickListOrange.Count - 1].gameObject.tag = "Empty";
