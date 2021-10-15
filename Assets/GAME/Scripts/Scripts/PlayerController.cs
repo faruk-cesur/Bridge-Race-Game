@@ -13,17 +13,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _playerModel;
     [SerializeField] private Transform _playerModelPelvis;
     [SerializeField] private FloatingJoystick _floatingJoystick;
+    [SerializeField] private Animator _animator;
 
     private float _brickHeight = 0.5f;
-
+    private bool _isRunning;
+    
     private void Update()
     {
         switch (GameManager.Instance.CurrentGameState)
         {
             case GameState.StartGame:
-                AnimationController.Instance.IdleAnimation();
+                CheckCharacterMovement();
+                AnimationController.Instance.RunAnimation(_animator,_isRunning);
                 break;
             case GameState.MainGame:
+                CheckCharacterMovement();
+                AnimationController.Instance.RunAnimation(_animator,_isRunning);
                 characterController.ResetCharacterTransform(_playerModel);
                 PlayerMovement();
                 break;
@@ -38,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerMovement()
     {
-        if (GameManager.Instance.isRunning)
+        if (_isRunning)
         {
             characterController.CharacterRotation(_floatingJoystick.Horizontal, _floatingJoystick.Vertical, _playerModel);
         }
@@ -50,5 +55,10 @@ public class PlayerController : MonoBehaviour
     {
         characterController.CollectBrickTrigger(other, _brickHeight, _playerModelPelvis, collectedBrickListBlue, BrickColors.Blue);
         StartCoroutine(characterController.LastBridgeTrigger(other));
+    }
+
+    private void CheckCharacterMovement()
+    {
+        characterController.CheckCharacterMovement(out _isRunning);
     }
 }

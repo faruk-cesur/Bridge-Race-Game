@@ -11,17 +11,22 @@ public class CharacterOrange : MonoBehaviour
 
     [SerializeField] private Transform _playerModel;
     [SerializeField] private Transform _playerModelPelvis;
+    [SerializeField] private Animator _animator;
 
     private float _brickHeight = 0.5f;
+    private bool _isRunning;
 
     private void Update()
     {
         switch (GameManager.Instance.CurrentGameState)
         {
             case GameState.StartGame:
-                AnimationController.Instance.IdleAnimation();
+                CheckCharacterMovement();
+                AnimationController.Instance.RunAnimation(_animator,_isRunning);
                 break;
             case GameState.MainGame:
+                CheckCharacterMovement();
+                AnimationController.Instance.RunAnimation(_animator,_isRunning);
                 characterController.ResetCharacterTransform(_playerModel);
                 //PlayerMovement();
                 break;
@@ -42,5 +47,10 @@ public class CharacterOrange : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         characterController.CollectBrickTrigger(other, _brickHeight, _playerModelPelvis, collectedBrickListOrange, BrickColors.Orange);
+    }
+    
+    private void CheckCharacterMovement()
+    {
+        characterController.CheckCharacterMovement(out _isRunning);
     }
 }

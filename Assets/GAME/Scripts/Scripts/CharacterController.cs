@@ -80,4 +80,16 @@ public class CharacterController : MonoBehaviour
             gameObject.GetComponent<Collider>().enabled = true;
         }
     }
+
+    public void CheckCharacterMovement(out bool isRunning)
+    {
+        if (_rigidbody.velocity.x == 0 && _rigidbody.velocity.y == 0 && _rigidbody.velocity.z == 0)
+        {
+            isRunning = false;
+        }
+        else
+        {
+            isRunning = true;
+        }
+    }
 }

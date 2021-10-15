@@ -113,6 +113,7 @@ MonoBehaviour:
   collectedBrickListGreen: []
   _playerModel: {fileID: 6748079911543242375}
   _playerModelPelvis: {fileID: 6748079911543242379}
+  _animator: {fileID: 1055489751216632669}
 --- !u!1 &3091151011865542452
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +741,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6748079911543242375}
+  - component: {fileID: 1055489751216632669}
   m_Layer: 0
   m_Name: StickmanGreen
   m_TagString: Untagged
@@ -764,6 +766,25 @@ Transform:
   m_Father: {fileID: 3091151011865542455}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1055489751216632669
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6748079911543268069}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: fa7f36c71b9e8fa4798df3a931c2fd92, type: 3}
+  m_Controller: {fileID: 9100000, guid: 0c107be03105e9d49827b63dd31d4f06, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6748079911543268071
 GameObject:
   m_ObjectHideFlags: 0
