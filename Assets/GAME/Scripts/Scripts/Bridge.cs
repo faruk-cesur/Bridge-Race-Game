@@ -37,7 +37,7 @@ public class Bridge : MonoBehaviour
                         if (BrickSpawner.Instance.bricksList[i].CompareTag("Empty"))
                         {
                             BrickSpawner.Instance.bricksList[i].tag = "Untagged";
-                            character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.transform.position = BrickSpawner.Instance.bricksPositionList[i];
+                            character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.transform.position = BrickSpawner.Instance.blueBricksPositionList[i];
                         }
                     }
 
@@ -59,7 +59,7 @@ public class Bridge : MonoBehaviour
                         if (BrickSpawner.Instance.bricksList[i].CompareTag("Empty"))
                         {
                             BrickSpawner.Instance.bricksList[i].tag = "Untagged";
-                            character.characterGreen.collectedBrickListGreen[character.characterGreen.collectedBrickListGreen.Count - 1].gameObject.transform.position = BrickSpawner.Instance.bricksPositionList[i];
+                            character.characterGreen.collectedBrickListGreen[character.characterGreen.collectedBrickListGreen.Count - 1].gameObject.transform.position = BrickSpawner.Instance.greenBricksPositionList[i];
                         }
                     }
 
@@ -81,7 +81,7 @@ public class Bridge : MonoBehaviour
                         if (BrickSpawner.Instance.bricksList[i].CompareTag("Empty"))
                         {
                             BrickSpawner.Instance.bricksList[i].tag = "Untagged";
-                            character.characterPink.collectedBrickListPink[character.characterPink.collectedBrickListPink.Count - 1].gameObject.transform.position = BrickSpawner.Instance.bricksPositionList[i];
+                            character.characterPink.collectedBrickListPink[character.characterPink.collectedBrickListPink.Count - 1].gameObject.transform.position = BrickSpawner.Instance.pinkBricksPositionList[i];
                         }
                     }
 
@@ -103,7 +103,7 @@ public class Bridge : MonoBehaviour
                         if (BrickSpawner.Instance.bricksList[i].CompareTag("Empty"))
                         {
                             BrickSpawner.Instance.bricksList[i].tag = "Untagged";
-                            character.characterOrange.collectedBrickListOrange[character.characterOrange.collectedBrickListOrange.Count - 1].gameObject.transform.position = BrickSpawner.Instance.bricksPositionList[i];
+                            character.characterOrange.collectedBrickListOrange[character.characterOrange.collectedBrickListOrange.Count - 1].gameObject.transform.position = BrickSpawner.Instance.orangeBricksPositionList[i];
                         }
                     }
 

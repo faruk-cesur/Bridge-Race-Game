@@ -19,7 +19,7 @@ public class Brick : MonoBehaviour
 
     [SerializeField] private MeshRenderer meshRenderer;
 
-    private void CurrentColor()
+    public void CurrentColor()
     {
         switch (color)
         {
