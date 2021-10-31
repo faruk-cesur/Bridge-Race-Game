@@ -32,11 +32,11 @@ public class Bridge : MonoBehaviour
                     character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.transform.SetParent(brickParentObject.transform);
                     character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
                     character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.GetComponent<Collider>().enabled = true;
-                    for (int i = 0; i < BrickSpawner.Instance.bricksList.Count; i++)
+                    for (int i = 0; i < character.player.collectedBrickListBlue.Count; i++)
                     {
-                        if (BrickSpawner.Instance.bricksList[i].CompareTag("Empty"))
+                        if (character.player.collectedBrickListBlue[i].CompareTag("Empty"))
                         {
-                            BrickSpawner.Instance.bricksList[i].tag = "Untagged";
+                            character.player.collectedBrickListBlue[i].tag = "Untagged";
                             character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.transform.position = BrickSpawner.Instance.blueBricksPositionList[i];
                         }
                     }
