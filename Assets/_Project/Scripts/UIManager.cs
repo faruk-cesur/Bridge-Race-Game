@@ -36,8 +36,6 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> _goldenCoins;
 
-    private bool _isBonusPointSelected;
-
     private float _anglerBonusArrowZ, _time = 1f;
 
     private void Awake()
@@ -74,6 +72,8 @@ public class UIManager : MonoBehaviour
             case GameState.WinGame:
                 UpdateGoldInfo();
                 break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 

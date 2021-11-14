@@ -16454,7 +16454,10 @@ MonoBehaviour:
   brickPrefab: {fileID: 4098322506325541328, guid: 561e096fda54b40efb571030aa3e8085,
     type: 3}
   bricksList: []
-  bricksPositionList: []
+  blueBricksPositionList: []
+  greenBricksPositionList: []
+  pinkBricksPositionList: []
+  orangeBricksPositionList: []
 --- !u!4 &1056508942
 Transform:
   m_ObjectHideFlags: 0
@@ -39428,7 +39431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &4848184290219999620
 MonoBehaviour:
   m_ObjectHideFlags: 0
