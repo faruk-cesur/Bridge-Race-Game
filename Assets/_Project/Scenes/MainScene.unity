@@ -33895,7 +33895,7 @@ GameObject:
   - component: {fileID: 1939086857}
   - component: {fileID: 1939086856}
   m_Layer: 0
-  m_Name: TriggerFinishBridge
+  m_Name: TriggerFinishLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33924,7 +33924,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1939086854}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e1cb4b81a6706a40b87876934782d19, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bc7fe0cf4b141d4b27645e2e3e7866c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &1939086857
@@ -40852,6 +40852,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644716707308483985, guid: 989a55ceff637504d8a6de8c541124dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 989a55ceff637504d8a6de8c541124dd, type: 3}

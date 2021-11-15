@@ -17,6 +17,7 @@ public class CharacterController : MonoBehaviour
 
     private Rigidbody _rigidbody;
     private bool _isGameStarted;
+    private bool _isGameFinished;
 
     private void Start()
     {
@@ -26,17 +27,25 @@ public class CharacterController : MonoBehaviour
         characterPink = GetComponent<CharacterPink>();
         characterOrange = GetComponent<CharacterOrange>();
     }
-
+    
     public void CharacterMovement(float horizontalMove, float verticalMove)
     {
-        _rigidbody.velocity = new Vector3(horizontalMove, 0f, verticalMove) * runSpeed;
+        if (!_isGameFinished)
+        {
+            _rigidbody.velocity = new Vector3(horizontalMove, 0f, verticalMove) * runSpeed;
+        }
     }
 
     public void CharacterRotation(float horizontalMove, float verticalMove, Transform playerModel)
     {
-        var rotation = playerModel.rotation;
-        rotation = Quaternion.Slerp(rotation, rotation = Quaternion.LookRotation((verticalMove * transform.forward + horizontalMove * transform.right).normalized), Time.fixedDeltaTime * angleSpeed);
-        playerModel.rotation = rotation;
+        if (!_isGameFinished)
+        {
+            var rotation = playerModel.rotation;
+            rotation = Quaternion.Slerp(rotation,
+                rotation = Quaternion.LookRotation((verticalMove * transform.forward + horizontalMove * transform.right)
+                    .normalized), Time.fixedDeltaTime * angleSpeed);
+            playerModel.rotation = rotation;
+        }
     }
 
     public void ResetCharacterTransform(Transform playerModel)
@@ -50,7 +59,8 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    public void CollectBrickTrigger(Collider other, float brickHeight, Transform playerModelPelvis, List<Brick> collectedBrickList, BrickColors color)
+    public void CollectBrickTrigger(Collider other, float brickHeight, Transform playerModelPelvis,
+        List<Brick> collectedBrickList, BrickColors color)
     {
         Brick brick = other.GetComponentInParent<Brick>();
         if (brick)
@@ -74,11 +84,27 @@ public class CharacterController : MonoBehaviour
         if (finishBridgeTrigger)
         {
             gameObject.GetComponent<Collider>().enabled = false;
-            gameObject.transform.DOMove(new Vector3(transform.position.x, transform.position.y +0.20f, transform.position.z + 2),0.5f);
+            gameObject.transform.DOMove(new Vector3(transform.position.x, transform.position.y + 0.20f, transform.position.z + 1.5f), 0.5f);
             yield return new WaitForSeconds(0.5f);
             gameObject.GetComponent<Collider>().enabled = true;
         }
     }
+
+    public void FinishLineTrigger(Collider other, Animator animator)
+    {
+        FinishLineTrigger finishLineTrigger = other.GetComponentInParent<FinishLineTrigger>();
+
+        if (finishLineTrigger)
+        {
+            _isGameFinished = true;
+            gameObject.GetComponent<Collider>().enabled = false;
+            gameObject.transform.DOMove(new Vector3(transform.position.x, transform.position.y + 0.20f, transform.position.z + 1.5f), 0.5f);
+            gameObject.transform.rotation = Quaternion.Euler(0,180,0);
+            _rigidbody.velocity = Vector3.zero;
+            AnimationController.Instance.WinAnimation(animator);
+        }
+    }
+
 
     public void CheckCharacterMovement(out bool isRunning)
     {

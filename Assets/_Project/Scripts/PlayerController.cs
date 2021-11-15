@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
     {
         characterController.CollectBrickTrigger(other, _brickHeight, _playerModelPelvis, collectedBrickListBlue, BrickColors.Blue);
         StartCoroutine(characterController.LastBridgeTrigger(other));
+        characterController.FinishLineTrigger(other,_animator);
     }
 
     private void CheckCharacterMovement()
