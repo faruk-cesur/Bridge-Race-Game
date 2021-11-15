@@ -11,7 +11,7 @@ public class Bridge : MonoBehaviour
     [ReorderableList] [SerializeField] private List<Material> _materials;
     [SerializeField] private GameObject _bridgeParentObject;
     [SerializeField] private GameObject _brickParentObject;
-    [SerializeField] private Collider _stairCollider;
+    [SerializeField] private GameObject _stairCollider;
 
     private bool _isCharacterTouch;
 
@@ -27,7 +27,7 @@ public class Bridge : MonoBehaviour
                     _isCharacterTouch = true;
                     var go = Instantiate(gameObject, new Vector3(transform.position.x, transform.position.y + 0.30f, transform.position.z + 0.6f), transform.rotation, _bridgeParentObject.transform);
                     go.GetComponentInChildren<MeshRenderer>().sharedMaterial = go.GetComponent<Bridge>()._materials[1];
-                    _stairCollider.enabled = false;
+                    _stairCollider.layer = 6;
                     character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.tag = "Empty";
                     character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.transform.SetParent(_brickParentObject.transform);
                     character.player.collectedBrickListBlue[character.player.collectedBrickListBlue.Count - 1].gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
@@ -49,7 +49,7 @@ public class Bridge : MonoBehaviour
                     _isCharacterTouch = true;
                     var go = Instantiate(gameObject, new Vector3(transform.position.x, transform.position.y + 0.30f, transform.position.z + 0.6f), transform.rotation, _bridgeParentObject.transform);
                     go.GetComponentInChildren<MeshRenderer>().sharedMaterial = go.GetComponent<Bridge>()._materials[2];
-                    _stairCollider.enabled = false;
+                    _stairCollider.layer = 7;
                     character.characterGreen.collectedBrickListGreen[character.characterGreen.collectedBrickListGreen.Count - 1].gameObject.tag = "Empty";
                     character.characterGreen.collectedBrickListGreen[character.characterGreen.collectedBrickListGreen.Count - 1].gameObject.transform.SetParent(_brickParentObject.transform);
                     character.characterGreen.collectedBrickListGreen[character.characterGreen.collectedBrickListGreen.Count - 1].gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
@@ -71,7 +71,7 @@ public class Bridge : MonoBehaviour
                     _isCharacterTouch = true;
                     var go = Instantiate(gameObject, new Vector3(transform.position.x, transform.position.y + 0.30f, transform.position.z + 0.6f), transform.rotation, _bridgeParentObject.transform);
                     go.GetComponentInChildren<MeshRenderer>().sharedMaterial = go.GetComponent<Bridge>()._materials[3];
-                    _stairCollider.enabled = false;
+                    _stairCollider.layer = 8;
                     character.characterPink.collectedBrickListPink[character.characterPink.collectedBrickListPink.Count - 1].gameObject.tag = "Empty";
                     character.characterPink.collectedBrickListPink[character.characterPink.collectedBrickListPink.Count - 1].gameObject.transform.SetParent(_brickParentObject.transform);
                     character.characterPink.collectedBrickListPink[character.characterPink.collectedBrickListPink.Count - 1].gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
@@ -93,7 +93,7 @@ public class Bridge : MonoBehaviour
                     _isCharacterTouch = true;
                     var go = Instantiate(gameObject, new Vector3(transform.position.x, transform.position.y + 0.30f, transform.position.z + 0.6f), transform.rotation, _bridgeParentObject.transform);
                     go.GetComponentInChildren<MeshRenderer>().sharedMaterial = go.GetComponent<Bridge>()._materials[4];
-                    _stairCollider.enabled = false;
+                    _stairCollider.layer = 9;
                     character.characterOrange.collectedBrickListOrange[character.characterOrange.collectedBrickListOrange.Count - 1].gameObject.tag = "Empty";
                     character.characterOrange.collectedBrickListOrange[character.characterOrange.collectedBrickListOrange.Count - 1].gameObject.transform.SetParent(_brickParentObject.transform);
                     character.characterOrange.collectedBrickListOrange[character.characterOrange.collectedBrickListOrange.Count - 1].gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
