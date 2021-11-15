@@ -75,7 +75,6 @@ public class CharacterController : MonoBehaviour
         {
             gameObject.GetComponent<Collider>().enabled = false;
             gameObject.transform.DOMove(new Vector3(transform.position.x, transform.position.y +0.20f, transform.position.z + 2),0.5f);
-            other.gameObject.GetComponent<Collider>().isTrigger = false;
             yield return new WaitForSeconds(0.5f);
             gameObject.GetComponent<Collider>().enabled = true;
         }
