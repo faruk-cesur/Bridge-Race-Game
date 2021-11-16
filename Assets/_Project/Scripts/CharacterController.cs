@@ -90,7 +90,7 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    public void FinishLineTrigger(Collider other, Animator animator)
+    public void FinishLineTrigger(Collider other, Animator animator, Transform playerModel)
     {
         FinishLineTrigger finishLineTrigger = other.GetComponentInParent<FinishLineTrigger>();
 
@@ -98,10 +98,11 @@ public class CharacterController : MonoBehaviour
         {
             _isGameFinished = true;
             gameObject.GetComponent<Collider>().enabled = false;
-            gameObject.transform.DOMove(new Vector3(transform.position.x, transform.position.y + 0.20f, transform.position.z + 1.5f), 0.5f);
-            gameObject.transform.rotation = Quaternion.Euler(0,180,0);
+            gameObject.transform.DOMove(new Vector3(0, transform.position.y + 0.20f, transform.position.z + 1.5f), 0.5f);
+            playerModel.localRotation = Quaternion.Euler(0, 180, 0);
             _rigidbody.velocity = Vector3.zero;
             AnimationController.Instance.WinAnimation(animator);
+            CameraManager.Instance.WinGameCamera();
         }
     }
 
