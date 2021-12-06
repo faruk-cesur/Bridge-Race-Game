@@ -8190,7 +8190,7 @@ GameObject:
   - component: {fileID: 999678872}
   m_Layer: 0
   m_Name: BrickSpawner
-  m_TagString: BrickSpawner
+  m_TagString: BrickSpawner3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8223,6 +8223,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickPrefab: {fileID: 4098322506325541328, guid: 561e096fda54b40efb571030aa3e8085,
     type: 3}
+  spawnerParent1: {fileID: 0}
+  spawnerParent2: {fileID: 0}
+  spawnerParent3: {fileID: 0}
   bricksList: []
   blueBricksPositionList: []
   greenBricksPositionList: []
@@ -11266,7 +11269,7 @@ GameObject:
   - component: {fileID: 1322959016}
   m_Layer: 0
   m_Name: BrickSpawner
-  m_TagString: BrickSpawner
+  m_TagString: BrickSpawner1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11299,6 +11302,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickPrefab: {fileID: 4098322506325541328, guid: 561e096fda54b40efb571030aa3e8085,
     type: 3}
+  spawnerParent1: {fileID: 0}
+  spawnerParent2: {fileID: 0}
+  spawnerParent3: {fileID: 0}
   bricksList: []
   blueBricksPositionList: []
   greenBricksPositionList: []
@@ -15420,7 +15426,7 @@ GameObject:
   - component: {fileID: 1664971137}
   m_Layer: 0
   m_Name: BrickSpawner
-  m_TagString: BrickSpawner
+  m_TagString: BrickSpawner2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15453,6 +15459,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickPrefab: {fileID: 4098322506325541328, guid: 561e096fda54b40efb571030aa3e8085,
     type: 3}
+  spawnerParent1: {fileID: 0}
+  spawnerParent2: {fileID: 0}
+  spawnerParent3: {fileID: 0}
   bricksList: []
   blueBricksPositionList: []
   greenBricksPositionList: []

@@ -7,6 +7,9 @@ using Random = UnityEngine.Random;
 public class BrickSpawner : Singleton<BrickSpawner>
 {
     public GameObject brickPrefab;
+    public Transform spawnerParent1;
+    public Transform spawnerParent2;
+    public Transform spawnerParent3;
 
     public List<GameObject> bricksList;
 
@@ -27,9 +30,37 @@ public class BrickSpawner : Singleton<BrickSpawner>
 
     private void Awake()
     {
-        StartingSpawn();
-
         CalculateBrickColors();
+    }
+
+    private void Update()
+    {
+        if (GameManager.Instance.CurrentGameState == GameState.MainGame)
+        {
+            gameObject.GetComponent<Collider>().enabled = true;
+        }
+        else
+        {
+            gameObject.GetComponent<Collider>().enabled = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Blue") && gameObject.CompareTag("BrickSpawner1") && GameManager.Instance.CurrentGameState == GameState.MainGame)
+        {
+            StartingSpawn(spawnerParent1);
+        }
+        
+        if (other.CompareTag("Blue") && gameObject.CompareTag("BrickSpawner2") && GameManager.Instance.CurrentGameState == GameState.MainGame)
+        {
+            StartingSpawn(spawnerParent2);
+        }
+        
+        if (other.CompareTag("Blue") && gameObject.CompareTag("BrickSpawner3") && GameManager.Instance.CurrentGameState == GameState.MainGame)
+        {
+            StartingSpawn(spawnerParent3);
+        }
     }
 
     private void CalculateBrickColors()
@@ -81,13 +112,14 @@ public class BrickSpawner : Singleton<BrickSpawner>
         }
     }
 
-    private void StartingSpawn()
+    private void StartingSpawn(Transform parent)
     {
         for (int i = 0; i < 7; i++)
         {
             for (int j = 0; j < 9; j++)
             {
-                var prefab = Instantiate(brickPrefab, new Vector3(_xValue, 0, _zValue), Quaternion.Euler(0, 90, 0));
+                var prefab = Instantiate(brickPrefab, Vector3.zero, Quaternion.Euler(0, 90, 0),parent);
+                prefab.transform.localPosition = new Vector3(_xValue, 0, _zValue);
                 _xValue += 2;
                 bricksList.Add(prefab);
             }
