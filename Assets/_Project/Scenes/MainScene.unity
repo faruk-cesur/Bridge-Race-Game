@@ -8223,9 +8223,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickPrefab: {fileID: 4098322506325541328, guid: 561e096fda54b40efb571030aa3e8085,
     type: 3}
-  spawnerParent1: {fileID: 0}
-  spawnerParent2: {fileID: 0}
-  spawnerParent3: {fileID: 0}
+  spawnerParent1: {fileID: 961691050}
+  spawnerParent2: {fileID: 129879047}
+  spawnerParent3: {fileID: 532088749}
   bricksList: []
   blueBricksPositionList: []
   greenBricksPositionList: []
@@ -11302,9 +11302,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickPrefab: {fileID: 4098322506325541328, guid: 561e096fda54b40efb571030aa3e8085,
     type: 3}
-  spawnerParent1: {fileID: 0}
-  spawnerParent2: {fileID: 0}
-  spawnerParent3: {fileID: 0}
+  spawnerParent1: {fileID: 961691050}
+  spawnerParent2: {fileID: 129879047}
+  spawnerParent3: {fileID: 532088749}
   bricksList: []
   blueBricksPositionList: []
   greenBricksPositionList: []
@@ -15459,9 +15459,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickPrefab: {fileID: 4098322506325541328, guid: 561e096fda54b40efb571030aa3e8085,
     type: 3}
-  spawnerParent1: {fileID: 0}
-  spawnerParent2: {fileID: 0}
-  spawnerParent3: {fileID: 0}
+  spawnerParent1: {fileID: 961691050}
+  spawnerParent2: {fileID: 129879047}
+  spawnerParent3: {fileID: 532088749}
   bricksList: []
   blueBricksPositionList: []
   greenBricksPositionList: []
