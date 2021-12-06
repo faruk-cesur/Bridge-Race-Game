@@ -101,7 +101,7 @@ public class CharacterController : MonoBehaviour
             gameObject.transform.DOMove(new Vector3(0, transform.position.y + 0.20f, transform.position.z + 1.5f), 0.5f);
             playerModel.localRotation = Quaternion.Euler(0, 180, 0);
             _rigidbody.velocity = Vector3.zero;
-            AnimationController.Instance.WinAnimation(animator);
+            AnimationManager.Instance.WinAnimation(animator);
             CameraManager.Instance.WinGameCamera();
         }
     }

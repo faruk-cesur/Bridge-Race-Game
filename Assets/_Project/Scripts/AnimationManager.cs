@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationController : MonoBehaviour
+public class AnimationManager : MonoBehaviour
 {
-    private static AnimationController _instance;
-    public static AnimationController Instance => _instance;
+    private static AnimationManager _instance;
+    public static AnimationManager Instance => _instance;
     
     private void Awake()
     {

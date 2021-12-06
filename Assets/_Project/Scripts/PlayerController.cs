@@ -24,11 +24,11 @@ public class PlayerController : MonoBehaviour
         {
             case GameState.StartGame:
                 CheckCharacterMovement();
-                AnimationController.Instance.RunAnimation(_animator,_isRunning);
+                AnimationManager.Instance.RunAnimation(_animator,_isRunning);
                 break;
             case GameState.MainGame:
                 CheckCharacterMovement();
-                AnimationController.Instance.RunAnimation(_animator,_isRunning);
+                AnimationManager.Instance.RunAnimation(_animator,_isRunning);
                 characterController.ResetCharacterTransform(_playerModel);
                 PlayerMovement();
                 break;
