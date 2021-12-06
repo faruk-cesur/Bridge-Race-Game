@@ -27,7 +27,7 @@ public class CharacterController : MonoBehaviour
         characterPink = GetComponent<CharacterPink>();
         characterOrange = GetComponent<CharacterOrange>();
     }
-    
+
     public void CharacterMovement(float horizontalMove, float verticalMove)
     {
         if (!_isGameFinished)
@@ -79,9 +79,7 @@ public class CharacterController : MonoBehaviour
 
     public IEnumerator LastBridgeTrigger(Collider other)
     {
-        FinishBridgeTrigger finishBridgeTrigger = other.GetComponentInParent<FinishBridgeTrigger>();
-
-        if (finishBridgeTrigger)
+        if (other.CompareTag("LastBridge"))
         {
             gameObject.GetComponent<Collider>().enabled = false;
             gameObject.transform.DOMove(new Vector3(transform.position.x, transform.position.y + 0.20f, transform.position.z + 1.5f), 0.5f);
@@ -92,9 +90,7 @@ public class CharacterController : MonoBehaviour
 
     public void FinishLineTrigger(Collider other, Animator animator, Transform playerModel)
     {
-        FinishLineTrigger finishLineTrigger = other.GetComponentInParent<FinishLineTrigger>();
-
-        if (finishLineTrigger)
+        if (other.CompareTag("FinishLine"))
         {
             _isGameFinished = true;
             gameObject.GetComponent<Collider>().enabled = false;

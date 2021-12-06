@@ -9,6 +9,8 @@ TagManager:
   - Pink
   - Orange
   - Empty
+  - FinishLine
+  - LastBridge
   layers:
   - Default
   - TransparentFX

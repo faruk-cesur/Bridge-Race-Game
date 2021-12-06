@@ -1492,10 +1492,9 @@ GameObject:
   - component: {fileID: 82314027}
   - component: {fileID: 82314026}
   - component: {fileID: 82314025}
-  - component: {fileID: 82314024}
   m_Layer: 0
   m_Name: TriggerFinishBridge
-  m_TagString: Untagged
+  m_TagString: LastBridge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1514,18 +1513,6 @@ Transform:
   m_Father: {fileID: 579947435}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &82314024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 82314022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e1cb4b81a6706a40b87876934782d19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &82314025
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2230,10 +2217,9 @@ GameObject:
   - component: {fileID: 110882458}
   - component: {fileID: 110882457}
   - component: {fileID: 110882456}
-  - component: {fileID: 110882455}
   m_Layer: 0
   m_Name: TriggerFinishBridge
-  m_TagString: Untagged
+  m_TagString: LastBridge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2252,18 +2238,6 @@ Transform:
   m_Father: {fileID: 1905927284}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &110882455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 110882453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e1cb4b81a6706a40b87876934782d19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &110882456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6701,10 +6675,9 @@ GameObject:
   - component: {fileID: 399138907}
   - component: {fileID: 399138906}
   - component: {fileID: 399138905}
-  - component: {fileID: 399138904}
   m_Layer: 0
   m_Name: TriggerFinishBridge
-  m_TagString: Untagged
+  m_TagString: LastBridge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6723,18 +6696,6 @@ Transform:
   m_Father: {fileID: 2072900324}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &399138904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399138902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e1cb4b81a6706a40b87876934782d19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &399138905
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9966,10 +9927,9 @@ GameObject:
   - component: {fileID: 648328222}
   - component: {fileID: 648328221}
   - component: {fileID: 648328220}
-  - component: {fileID: 648328219}
   m_Layer: 0
   m_Name: TriggerFinishBridge
-  m_TagString: Untagged
+  m_TagString: LastBridge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9988,18 +9948,6 @@ Transform:
   m_Father: {fileID: 1051795576}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &648328219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648328217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e1cb4b81a6706a40b87876934782d19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &648328220
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12072,10 +12020,9 @@ GameObject:
   - component: {fileID: 756506034}
   - component: {fileID: 756506033}
   - component: {fileID: 756506032}
-  - component: {fileID: 756506031}
   m_Layer: 0
   m_Name: TriggerFinishBridge
-  m_TagString: Untagged
+  m_TagString: LastBridge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12094,18 +12041,6 @@ Transform:
   m_Father: {fileID: 1130125906}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &756506031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756506029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e1cb4b81a6706a40b87876934782d19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &756506032
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19279,10 +19214,9 @@ GameObject:
   - component: {fileID: 1191150659}
   - component: {fileID: 1191150658}
   - component: {fileID: 1191150657}
-  - component: {fileID: 1191150656}
   m_Layer: 0
   m_Name: TriggerFinishBridge
-  m_TagString: Untagged
+  m_TagString: LastBridge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19301,18 +19235,6 @@ Transform:
   m_Father: {fileID: 1627097576}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &1191150656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191150654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e1cb4b81a6706a40b87876934782d19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1191150657
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33880,10 +33802,9 @@ GameObject:
   - component: {fileID: 1939086859}
   - component: {fileID: 1939086858}
   - component: {fileID: 1939086857}
-  - component: {fileID: 1939086856}
   m_Layer: 0
   m_Name: TriggerFinishLine
-  m_TagString: Untagged
+  m_TagString: FinishLine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33902,18 +33823,6 @@ Transform:
   m_Father: {fileID: 497247959}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &1939086856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939086854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bc7fe0cf4b141d4b27645e2e3e7866c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1939086857
 BoxCollider:
   m_ObjectHideFlags: 0
