@@ -11,6 +11,7 @@ TagManager:
   - Empty
   - FinishLine
   - LastBridge
+  - BrickSpawner
   layers:
   - Default
   - TransparentFX
