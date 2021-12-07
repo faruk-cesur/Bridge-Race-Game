@@ -461,9 +461,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characters
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterBlue
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterPink
+      value: 
+      objectReference: {fileID: 1865747285}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: _stairCollider
       value: 
       objectReference: {fileID: 830559297}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterGreen
+      value: 
+      objectReference: {fileID: 1025119915}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterOrange
+      value: 
+      objectReference: {fileID: 853682975}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: brickParentObject
@@ -486,9 +516,19 @@ PrefabInstance:
       objectReference: {fileID: 1807023935}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: characterController
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: _materials.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _lastCollectedBrickBlue
+      value: 
+      objectReference: {fileID: 1809669332}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: _materials.Array.data[0]
@@ -3633,9 +3673,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characters
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterBlue
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterPink
+      value: 
+      objectReference: {fileID: 1865747285}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: _stairCollider
       value: 
       objectReference: {fileID: 3470531309404042624}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterGreen
+      value: 
+      objectReference: {fileID: 1025119915}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterOrange
+      value: 
+      objectReference: {fileID: 853682975}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: _brickParentObject
@@ -3646,6 +3716,16 @@ PrefabInstance:
       propertyPath: _bridgeParentObject
       value: 
       objectReference: {fileID: 1807023935}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterController
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _lastCollectedBrickBlue
+      value: 
+      objectReference: {fileID: 1809669332}
     - target: {fileID: 9130767234132721608, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: m_RootOrder
@@ -6836,6 +6916,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850886413}
   m_Mesh: {fileID: 1149973307703454695, guid: ef16a5579e28d487dae43e0fdaa53a62, type: 3}
+--- !u!114 &853682975 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6973746605742696745, guid: 698cf10afa5b1384d979b54f5dd671e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1011954849006400745}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e734b47bd0db4856bccf0ffe5c2abdfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &865410464
 GameObject:
   m_ObjectHideFlags: 0
@@ -7040,9 +7132,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characters
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterBlue
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterPink
+      value: 
+      objectReference: {fileID: 1865747285}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: _stairCollider
       value: 
       objectReference: {fileID: 1982462097}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterGreen
+      value: 
+      objectReference: {fileID: 1025119915}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterOrange
+      value: 
+      objectReference: {fileID: 853682975}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: brickParentObject
@@ -7065,9 +7187,19 @@ PrefabInstance:
       objectReference: {fileID: 1807023935}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: characterController
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: _materials.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _lastCollectedBrickBlue
+      value: 
+      objectReference: {fileID: 1809669332}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: _materials.Array.data[0]
@@ -7162,7 +7294,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 7421550141185459269}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1809669332}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1f34bdffa6d4f2498196a9f2e4c763e, type: 3}
@@ -8483,6 +8615,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024876066}
   m_Mesh: {fileID: 1149973307703454695, guid: ef16a5579e28d487dae43e0fdaa53a62, type: 3}
+--- !u!114 &1025119915 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3091151011418832347, guid: f167accd2b92ea443ace0d19c12899cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 2399710666092654921}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e734b47bd0db4856bccf0ffe5c2abdfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!850595691 &1031885759
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -12362,9 +12506,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characters
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterBlue
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterPink
+      value: 
+      objectReference: {fileID: 1865747285}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: _stairCollider
       value: 
       objectReference: {fileID: 560959035}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterGreen
+      value: 
+      objectReference: {fileID: 1025119915}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterOrange
+      value: 
+      objectReference: {fileID: 853682975}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: brickParentObject
@@ -12387,9 +12561,19 @@ PrefabInstance:
       objectReference: {fileID: 1969451703}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: characterController
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: _materials.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _lastCollectedBrickBlue
+      value: 
+      objectReference: {fileID: 1809669332}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: _materials.Array.data[0]
@@ -13194,9 +13378,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characters
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterBlue
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterPink
+      value: 
+      objectReference: {fileID: 1865747285}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: _stairCollider
       value: 
       objectReference: {fileID: 278660978}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterGreen
+      value: 
+      objectReference: {fileID: 1025119915}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterOrange
+      value: 
+      objectReference: {fileID: 853682975}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: brickParentObject
@@ -13219,9 +13433,19 @@ PrefabInstance:
       objectReference: {fileID: 1969451703}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: characterController
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: _materials.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _lastCollectedBrickBlue
+      value: 
+      objectReference: {fileID: 1809669332}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: _materials.Array.data[0]
@@ -16873,9 +17097,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characters
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterBlue
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterPink
+      value: 
+      objectReference: {fileID: 1865747285}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: _stairCollider
       value: 
       objectReference: {fileID: 1767773068}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterGreen
+      value: 
+      objectReference: {fileID: 1025119915}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterOrange
+      value: 
+      objectReference: {fileID: 853682975}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: brickParentObject
@@ -16898,9 +17152,19 @@ PrefabInstance:
       objectReference: {fileID: 1969451703}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: characterController
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: _materials.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _lastCollectedBrickBlue
+      value: 
+      objectReference: {fileID: 1809669332}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: _materials.Array.data[0]
@@ -17114,6 +17378,24 @@ Transform:
   m_Father: {fileID: 625732784}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1809669332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7421550142100082080, guid: 989a55ceff637504d8a6de8c541124dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7421550141185459269}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1809669336 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7421550142100082083, guid: 989a55ceff637504d8a6de8c541124dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7421550141185459269}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809669332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e734b47bd0db4856bccf0ffe5c2abdfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1816872630
 GameObject:
   m_ObjectHideFlags: 0
@@ -17751,6 +18033,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862810551}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1865747285 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 558550297364704151, guid: d05f8dd0936775d4fab5a9e641d844ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 2601400758524515168}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e734b47bd0db4856bccf0ffe5c2abdfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1881518332
 GameObject:
   m_ObjectHideFlags: 0
@@ -18355,9 +18649,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characters
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterBlue
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterPink
+      value: 
+      objectReference: {fileID: 1865747285}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: _stairCollider
       value: 
       objectReference: {fileID: 842017607}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterGreen
+      value: 
+      objectReference: {fileID: 1025119915}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: characterOrange
+      value: 
+      objectReference: {fileID: 853682975}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: brickParentObject
@@ -18380,9 +18704,19 @@ PrefabInstance:
       objectReference: {fileID: 1807023935}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: characterController
+      value: 
+      objectReference: {fileID: 1809669336}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: _materials.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _lastCollectedBrickBlue
+      value: 
+      objectReference: {fileID: 1809669332}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: _materials.Array.data[0]

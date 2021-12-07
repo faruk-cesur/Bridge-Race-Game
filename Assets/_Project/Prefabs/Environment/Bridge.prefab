@@ -149,6 +149,8 @@ MonoBehaviour:
   _bridgeParentObject: {fileID: 0}
   _brickParentObject: {fileID: 0}
   _stairCollider: {fileID: 8569346310482227828}
+  character: {fileID: 7421550142100082083, guid: 989a55ceff637504d8a6de8c541124dd,
+    type: 3}
 --- !u!1 &7617874824721146897
 GameObject:
   m_ObjectHideFlags: 0
