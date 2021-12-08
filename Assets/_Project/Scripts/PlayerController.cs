@@ -17,18 +17,18 @@ public class PlayerController : MonoBehaviour
 
     private float _brickHeight = 0.5f;
     private bool _isRunning;
-    
+
     private void Update()
     {
         switch (GameManager.Instance.CurrentGameState)
         {
             case GameState.StartGame:
                 CheckCharacterMovement();
-                AnimationManager.Instance.RunAnimation(_animator,_isRunning);
+                AnimationManager.Instance.RunAnimation(_animator, _isRunning);
                 break;
             case GameState.MainGame:
                 CheckCharacterMovement();
-                AnimationManager.Instance.RunAnimation(_animator,_isRunning);
+                AnimationManager.Instance.RunAnimation(_animator, _isRunning);
                 characterController.ResetCharacterTransform(_playerModel);
                 PlayerMovement();
                 break;
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
     {
         characterController.CollectBrickTrigger(other, _brickHeight, _playerModelPelvis, collectedBrickListBlue, BrickColors.Blue);
         StartCoroutine(characterController.LastBridgeTrigger(other));
-        characterController.FinishLineTrigger(other,_animator, _playerModel);
+        characterController.FinishLineTrigger(other, _animator, _playerModel);
     }
 
     private void CheckCharacterMovement()

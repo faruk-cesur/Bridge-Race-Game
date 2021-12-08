@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
@@ -25,15 +26,19 @@ public class Brick : MonoBehaviour
         {
             case BrickColors.Blue:
                 meshRenderer.sharedMaterial = materials[0];
+                gameObject.tag = "BrickBlue";
                 break;
             case BrickColors.Green:
                 meshRenderer.sharedMaterial = materials[1];
+                gameObject.tag = "BrickGreen";
                 break;
             case BrickColors.Pink:
                 meshRenderer.sharedMaterial = materials[2];
+                gameObject.tag = "BrickPink";
                 break;
             case BrickColors.Orange:
                 meshRenderer.sharedMaterial = materials[3];
+                gameObject.tag = "BrickOrange";
                 break;
         }
     }

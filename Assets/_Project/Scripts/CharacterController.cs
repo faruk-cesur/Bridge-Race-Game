@@ -59,8 +59,7 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    public void CollectBrickTrigger(Collider other, float brickHeight, Transform playerModelPelvis,
-        List<Brick> collectedBrickList, BrickColors color)
+    public void CollectBrickTrigger(Collider other, float brickHeight, Transform playerModelPelvis, List<Brick> collectedBrickList, BrickColors color)
     {
         Brick brick = other.GetComponentInParent<Brick>();
         if (brick)

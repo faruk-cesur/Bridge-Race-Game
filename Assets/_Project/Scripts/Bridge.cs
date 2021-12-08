@@ -31,7 +31,7 @@ public class Bridge : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         CharacterController character = other.GetComponentInParent<CharacterController>();
-        
+
         if (character)
         {
             if (!_isCharacterTouch)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -7,9 +8,9 @@ using Random = UnityEngine.Random;
 public class BrickSpawner : Singleton<BrickSpawner>
 {
     public GameObject brickPrefab;
-    public Transform spawnerParent1;
-    public Transform spawnerParent2;
-    public Transform spawnerParent3;
+    public Transform brickSpawnerParent1;
+    public Transform brickSpawnerParent2;
+    public Transform brickSpawnerParent3;
 
     public List<GameObject> bricksList;
 
@@ -28,11 +29,6 @@ public class BrickSpawner : Singleton<BrickSpawner>
 
     private bool _isUsed;
 
-    private void Awake()
-    {
-        CalculateBrickColors();
-    }
-
     private void Update()
     {
         if (GameManager.Instance.CurrentGameState == GameState.MainGame)
@@ -47,19 +43,81 @@ public class BrickSpawner : Singleton<BrickSpawner>
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Blue") && gameObject.CompareTag("BrickSpawner1") && GameManager.Instance.CurrentGameState == GameState.MainGame)
+        // Herhangi bir karakter zemine ayak bastığında rastgele pozisyonlarda ve rastgele renklerde 63 adet brick oluşturur.
+
+        if ((other.CompareTag("Blue") || other.CompareTag("Green") || other.CompareTag("Pink") || other.CompareTag("Orange")) && gameObject.CompareTag("BrickSpawner1") && GameManager.Instance.CurrentGameState == GameState.MainGame)
         {
-            StartingSpawn(spawnerParent1);
+            gameObject.tag = "Untagged"; // Running Once
+            SpawnPlatformBricks(brickSpawnerParent1);
+            CalculateBrickColors();
         }
-        
-        if (other.CompareTag("Blue") && gameObject.CompareTag("BrickSpawner2") && GameManager.Instance.CurrentGameState == GameState.MainGame)
+
+        if ((other.CompareTag("Blue") || other.CompareTag("Green") || other.CompareTag("Pink") || other.CompareTag("Orange")) && gameObject.CompareTag("BrickSpawner2") && GameManager.Instance.CurrentGameState == GameState.MainGame)
         {
-            StartingSpawn(spawnerParent2);
+            gameObject.tag = "Untagged"; // Running Once
+            SpawnPlatformBricks(brickSpawnerParent2);
+            CalculateBrickColors();
         }
-        
-        if (other.CompareTag("Blue") && gameObject.CompareTag("BrickSpawner3") && GameManager.Instance.CurrentGameState == GameState.MainGame)
+
+        if ((other.CompareTag("Blue") || other.CompareTag("Green") || other.CompareTag("Pink") || other.CompareTag("Orange")) && gameObject.CompareTag("BrickSpawner3") && GameManager.Instance.CurrentGameState == GameState.MainGame)
         {
-            StartingSpawn(spawnerParent3);
+            gameObject.tag = "Untagged"; // Running Once
+            SpawnPlatformBricks(brickSpawnerParent3);
+            CalculateBrickColors();
+        }
+
+        // Zemine basan karakterin rengi ne ise o renkteki brickler görünür olur.
+
+        if (other.CompareTag("Blue"))
+        {
+            foreach (var brick in bricksList)
+            {
+                if (brick.CompareTag("BrickBlue"))
+                {
+                    brick.SetActive(true);
+                    brick.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+                    brick.transform.DOScale(new Vector3(3f, 3f, 3f), 0.25f).OnComplete(() => brick.transform.DOScale(new Vector3(2f, 2f, 2f), 0.25f));
+                }
+            }
+        }
+
+        if (other.CompareTag("Green"))
+        {
+            foreach (var brick in bricksList)
+            {
+                if (brick.CompareTag("BrickGreen"))
+                {
+                    brick.SetActive(true);
+                    brick.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+                    brick.transform.DOScale(new Vector3(3f, 3f, 3f), 0.25f).OnComplete(() => brick.transform.DOScale(new Vector3(2f, 2f, 2f), 0.25f));
+                }
+            }
+        }
+
+        if (other.CompareTag("Pink"))
+        {
+            foreach (var brick in bricksList)
+            {
+                if (brick.CompareTag("BrickPink"))
+                {
+                    brick.SetActive(true);
+                    brick.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+                    brick.transform.DOScale(new Vector3(3f, 3f, 3f), 0.25f).OnComplete(() => brick.transform.DOScale(new Vector3(2f, 2f, 2f), 0.25f));
+                }
+            }
+        }
+
+        if (other.CompareTag("Orange"))
+        {
+            foreach (var brick in bricksList)
+            {
+                if (brick.CompareTag("BrickOrange"))
+                {
+                    brick.SetActive(true);
+                    brick.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+                    brick.transform.DOScale(new Vector3(3f, 3f, 3f), 0.25f).OnComplete(() => brick.transform.DOScale(new Vector3(2f, 2f, 2f), 0.25f));
+                }
+            }
         }
     }
 
@@ -109,16 +167,17 @@ public class BrickSpawner : Singleton<BrickSpawner>
             }
 
             _isUsed = false;
+            brick.SetActive(false);
         }
     }
 
-    private void StartingSpawn(Transform parent)
+    private void SpawnPlatformBricks(Transform parent)
     {
         for (int i = 0; i < 7; i++)
         {
             for (int j = 0; j < 9; j++)
             {
-                var prefab = Instantiate(brickPrefab, Vector3.zero, Quaternion.Euler(0, 90, 0),parent);
+                var prefab = Instantiate(brickPrefab, Vector3.zero, Quaternion.Euler(0, 90, 0), parent);
                 prefab.transform.localPosition = new Vector3(_xValue, 0, _zValue);
                 _xValue += 2;
                 bricksList.Add(prefab);

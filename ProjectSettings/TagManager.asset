@@ -14,6 +14,10 @@ TagManager:
   - BrickSpawner1
   - BrickSpawner2
   - BrickSpawner3
+  - BrickBlue
+  - BrickGreen
+  - BrickPink
+  - BrickOrange
   layers:
   - Default
   - TransparentFX

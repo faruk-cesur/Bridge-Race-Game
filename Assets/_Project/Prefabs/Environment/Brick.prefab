@@ -76,7 +76,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b94f9b4973b2f47908d5861a57a47ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectedBrick: 0
   color: 0
   materials:
   - {fileID: 2100000, guid: 7d27b8fc20da6c7459e9640286bae184, type: 2}
