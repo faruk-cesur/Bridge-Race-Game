@@ -43,6 +43,8 @@ public class BrickSpawner : Singleton<BrickSpawner>
 
     private void OnTriggerEnter(Collider other)
     {
+        #region SpawnPlatformBricks
+
         // Herhangi bir karakter zemine ayak bastığında rastgele pozisyonlarda ve rastgele renklerde 63 adet brick oluşturur.
 
         if ((other.CompareTag("Blue") || other.CompareTag("Green") || other.CompareTag("Pink") || other.CompareTag("Orange")) && gameObject.CompareTag("BrickSpawner1") && GameManager.Instance.CurrentGameState == GameState.MainGame)
@@ -65,6 +67,11 @@ public class BrickSpawner : Singleton<BrickSpawner>
             SpawnPlatformBricks(brickSpawnerParent3);
             CalculateBrickColors();
         }
+
+        #endregion
+
+
+        #region BricksSetActiveTrue
 
         // Zemine basan karakterin rengi ne ise o renkteki brickler görünür olur.
 
@@ -119,6 +126,8 @@ public class BrickSpawner : Singleton<BrickSpawner>
                 }
             }
         }
+
+        #endregion
     }
 
     private void CalculateBrickColors()
