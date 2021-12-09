@@ -18,6 +18,8 @@ TagManager:
   - BrickGreen
   - BrickPink
   - BrickOrange
+  - BrickTaken
+  - BrickDefault
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public enum BrickColors
 {
+    Default,
     Blue,
     Green,
     Pink,
@@ -16,30 +17,59 @@ public class Brick : MonoBehaviour
 {
     [OnValueChanged("CurrentColor")] public BrickColors color;
 
-    [ReorderableList] [SerializeField] private List<Material> materials;
+    [ReorderableList] [SerializeField] private List<Material> _materials;
 
-    [SerializeField] private MeshRenderer meshRenderer;
+    [SerializeField] private MeshRenderer _meshRenderer;
+
+    private Vector3 _spawnPosition;
+
+    private void Awake()
+    {
+        Invoke(nameof(GetPosition), 0.01f);
+    }
+
+    private void Update()
+    {
+        if (gameObject.CompareTag("Empty"))
+        {
+            gameObject.tag = "Untagged";
+            var spawnedBrick = Instantiate(gameObject, _spawnPosition, Quaternion.identity);
+            spawnedBrick.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+            spawnedBrick.GetComponent<Collider>().enabled = true;
+        }
+    }
+
+    public void GetPosition()
+    {
+        _spawnPosition = transform.position;
+    }
 
     public void CurrentColor()
     {
         switch (color)
         {
+            case BrickColors.Default:
+                _meshRenderer.sharedMaterial = _materials[0];
+                gameObject.tag = "BrickDefault";
+                break;
             case BrickColors.Blue:
-                meshRenderer.sharedMaterial = materials[0];
+                _meshRenderer.sharedMaterial = _materials[1];
                 gameObject.tag = "BrickBlue";
                 break;
             case BrickColors.Green:
-                meshRenderer.sharedMaterial = materials[1];
+                _meshRenderer.sharedMaterial = _materials[2];
                 gameObject.tag = "BrickGreen";
                 break;
             case BrickColors.Pink:
-                meshRenderer.sharedMaterial = materials[2];
+                _meshRenderer.sharedMaterial = _materials[3];
                 gameObject.tag = "BrickPink";
                 break;
             case BrickColors.Orange:
-                meshRenderer.sharedMaterial = materials[3];
+                _meshRenderer.sharedMaterial = _materials[4];
                 gameObject.tag = "BrickOrange";
                 break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 }

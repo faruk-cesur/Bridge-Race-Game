@@ -62,9 +62,8 @@ public class LevelManager : MonoBehaviour
     public IEnumerator NextLevel()
     {
         yield return new WaitForSeconds(3f);
-        currentLevel++;
-        PlayerPrefs.SetInt("CurrentLevel", currentLevel);
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.buildIndex);
+        // currentLevel++;
+        // PlayerPrefs.SetInt("CurrentLevel", currentLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

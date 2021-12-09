@@ -13,8 +13,6 @@ public class UIManager : MonoBehaviour
     private static UIManager _instance;
     public static UIManager Instance => _instance;
 
-    public PlayerController player;
-
     public TextMeshProUGUI currentGoldText,
         earnedGoldText,
         earnedExtraGoldText,

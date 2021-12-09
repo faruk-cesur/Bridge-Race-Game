@@ -10,7 +10,6 @@ public class SoundManager : MonoBehaviour
     public AudioClip collectableSound, loseGameSound, winGameSound;
 
     public AudioSource audioSource;
-    
 
 
     private void Awake()
@@ -23,7 +22,7 @@ public class SoundManager : MonoBehaviour
         {
             _instance = this;
         }
-        
+
         audioSource = GetComponent<AudioSource>();
     }
 

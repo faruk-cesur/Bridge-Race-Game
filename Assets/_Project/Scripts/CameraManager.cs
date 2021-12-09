@@ -41,7 +41,7 @@ public class CameraManager : MonoBehaviour
         winGameCam.SetActive(false);
         loseGameCam.SetActive(false);
     }
-    
+
     public void WinGameCamera()
     {
         prepareGameCam.SetActive(false);

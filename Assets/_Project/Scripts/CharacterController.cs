@@ -66,12 +66,14 @@ public class CharacterController : MonoBehaviour
         {
             if (brick.color == color)
             {
+                brick.tag = "BrickTaken";
                 collectedBrickList.Add(other.gameObject.GetComponent<Brick>());
                 brickHeight = 0.25f + (collectedBrickList.Count * 0.25f);
                 other.gameObject.GetComponentInChildren<Collider>().enabled = false;
                 other.gameObject.transform.SetParent(playerModelPelvis);
                 other.gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
                 other.gameObject.transform.DOLocalMove(new Vector3(-0.4f, brickHeight, 0f), 0.5f);
+                UIManager.Instance.gold++;
             }
         }
     }
@@ -98,6 +100,7 @@ public class CharacterController : MonoBehaviour
             _rigidbody.velocity = Vector3.zero;
             AnimationManager.Instance.WinAnimation(animator);
             CameraManager.Instance.WinGameCamera();
+            GameManager.Instance.WinGame();
         }
     }
 

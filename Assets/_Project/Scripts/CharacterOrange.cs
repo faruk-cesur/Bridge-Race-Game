@@ -22,11 +22,11 @@ public class CharacterOrange : MonoBehaviour
         {
             case GameState.StartGame:
                 CheckCharacterMovement();
-                AnimationManager.Instance.RunAnimation(_animator,_isRunning);
+                AnimationManager.Instance.RunAnimation(_animator, _isRunning);
                 break;
             case GameState.MainGame:
                 CheckCharacterMovement();
-                AnimationManager.Instance.RunAnimation(_animator,_isRunning);
+                AnimationManager.Instance.RunAnimation(_animator, _isRunning);
                 characterController.ResetCharacterTransform(_playerModel);
                 //PlayerMovement();
                 break;
@@ -48,7 +48,7 @@ public class CharacterOrange : MonoBehaviour
     {
         characterController.CollectBrickTrigger(other, _brickHeight, _playerModelPelvis, collectedBrickListOrange, BrickColors.Orange);
     }
-    
+
     private void CheckCharacterMovement()
     {
         characterController.CheckCharacterMovement(out _isRunning);

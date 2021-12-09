@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 5669837105872907406}
   m_Layer: 0
   m_Name: Brick
-  m_TagString: Untagged
+  m_TagString: BrickDefault
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,12 +77,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 0
-  materials:
+  _materials:
+  - {fileID: 2100000, guid: fb964c7fb1cce4fcb876507d2167629c, type: 2}
   - {fileID: 2100000, guid: 7d27b8fc20da6c7459e9640286bae184, type: 2}
   - {fileID: 2100000, guid: 88471d19ad3d8cd49bea368d7f88cc5c, type: 2}
   - {fileID: 2100000, guid: 2fe041f38199d024dbbb678e70a3dcc8, type: 2}
   - {fileID: 2100000, guid: 88476ca19a4eb544294abe95c145ffa9, type: 2}
-  meshRenderer: {fileID: 5680237397792181806}
+  _meshRenderer: {fileID: 5680237397792181806}
+  _brickParentObject: {fileID: 0}
 --- !u!65 &5669837105872907406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -155,7 +157,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7d27b8fc20da6c7459e9640286bae184, type: 2}
+  - {fileID: 2100000, guid: fb964c7fb1cce4fcb876507d2167629c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

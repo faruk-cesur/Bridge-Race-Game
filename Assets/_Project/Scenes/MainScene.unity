@@ -471,6 +471,12 @@ PrefabInstance:
       objectReference: {fileID: 1809669336}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: brickInstance
+      value: 
+      objectReference: {fileID: 8310287021912188079, guid: 561e096fda54b40efb571030aa3e8085,
+        type: 3}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: characterBlue
       value: 
       objectReference: {fileID: 1809669336}
@@ -479,6 +485,21 @@ PrefabInstance:
       propertyPath: characterPink
       value: 
       objectReference: {fileID: 1865747285}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner1
+      value: 
+      objectReference: {fileID: 1322959016}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner2
+      value: 
+      objectReference: {fileID: 1664971137}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner3
+      value: 
+      objectReference: {fileID: 999678872}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: _stairCollider
@@ -3683,6 +3704,12 @@ PrefabInstance:
       objectReference: {fileID: 1809669336}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: brickInstance
+      value: 
+      objectReference: {fileID: 8310287021912188079, guid: 561e096fda54b40efb571030aa3e8085,
+        type: 3}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: characterBlue
       value: 
       objectReference: {fileID: 1809669336}
@@ -3691,6 +3718,21 @@ PrefabInstance:
       propertyPath: characterPink
       value: 
       objectReference: {fileID: 1865747285}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner1
+      value: 
+      objectReference: {fileID: 1322959016}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner2
+      value: 
+      objectReference: {fileID: 1664971137}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner3
+      value: 
+      objectReference: {fileID: 999678872}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: _stairCollider
@@ -6256,6 +6298,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770438925}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &789028017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 789028018}
+  m_Layer: 0
+  m_Name: BrickParentObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &789028018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789028017}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1431417208}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &792257494
 GameObject:
   m_ObjectHideFlags: 0
@@ -7142,6 +7214,12 @@ PrefabInstance:
       objectReference: {fileID: 1809669336}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: brickInstance
+      value: 
+      objectReference: {fileID: 8310287021912188079, guid: 561e096fda54b40efb571030aa3e8085,
+        type: 3}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: characterBlue
       value: 
       objectReference: {fileID: 1809669336}
@@ -7150,6 +7228,21 @@ PrefabInstance:
       propertyPath: characterPink
       value: 
       objectReference: {fileID: 1865747285}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner1
+      value: 
+      objectReference: {fileID: 1322959016}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner2
+      value: 
+      objectReference: {fileID: 1664971137}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner3
+      value: 
+      objectReference: {fileID: 999678872}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: _stairCollider
@@ -7288,18 +7381,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 893452526}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &918292967 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7421550142100082082, guid: 989a55ceff637504d8a6de8c541124dd,
-    type: 3}
-  m_PrefabInstance: {fileID: 7421550141185459269}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1809669332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1f34bdffa6d4f2498196a9f2e4c763e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &918292968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7421550142100082093, guid: 989a55ceff637504d8a6de8c541124dd,
@@ -10943,7 +11024,6 @@ Transform:
   - {fileID: 2399710666092654922}
   - {fileID: 2601400758524515169}
   - {fileID: 1011954849006400746}
-  - {fileID: 1431417208}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12516,6 +12596,12 @@ PrefabInstance:
       objectReference: {fileID: 1809669336}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: brickInstance
+      value: 
+      objectReference: {fileID: 8310287021912188079, guid: 561e096fda54b40efb571030aa3e8085,
+        type: 3}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: characterBlue
       value: 
       objectReference: {fileID: 1809669336}
@@ -12524,6 +12610,21 @@ PrefabInstance:
       propertyPath: characterPink
       value: 
       objectReference: {fileID: 1865747285}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner1
+      value: 
+      objectReference: {fileID: 1322959016}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner2
+      value: 
+      objectReference: {fileID: 1664971137}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner3
+      value: 
+      objectReference: {fileID: 999678872}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: _stairCollider
@@ -13183,12 +13284,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1431417208}
   m_Layer: 0
-  m_Name: Environment
+  m_Name: Level1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1431417208
 Transform:
   m_ObjectHideFlags: 0
@@ -13203,8 +13304,9 @@ Transform:
   - {fileID: 809502562}
   - {fileID: 200988469}
   - {fileID: 9039095953647355666}
-  m_Father: {fileID: 1218693865}
-  m_RootOrder: 7
+  - {fileID: 789028018}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1434693010
 GameObject:
@@ -13388,6 +13490,12 @@ PrefabInstance:
       objectReference: {fileID: 1809669336}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: brickInstance
+      value: 
+      objectReference: {fileID: 8310287021912188079, guid: 561e096fda54b40efb571030aa3e8085,
+        type: 3}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: characterBlue
       value: 
       objectReference: {fileID: 1809669336}
@@ -13396,6 +13504,21 @@ PrefabInstance:
       propertyPath: characterPink
       value: 
       objectReference: {fileID: 1865747285}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner1
+      value: 
+      objectReference: {fileID: 1322959016}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner2
+      value: 
+      objectReference: {fileID: 1664971137}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner3
+      value: 
+      objectReference: {fileID: 999678872}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: _stairCollider
@@ -13860,7 +13983,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1497931903
 Transform:
   m_ObjectHideFlags: 0
@@ -13887,7 +14010,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95113624b525485492a7f64783aa8120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: []
+  levels:
+  - {fileID: 1431417207}
   currentLevel: 0
 --- !u!1 &1510760264
 GameObject:
@@ -17107,6 +17231,12 @@ PrefabInstance:
       objectReference: {fileID: 1809669336}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: brickInstance
+      value: 
+      objectReference: {fileID: 8310287021912188079, guid: 561e096fda54b40efb571030aa3e8085,
+        type: 3}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: characterBlue
       value: 
       objectReference: {fileID: 1809669336}
@@ -17115,6 +17245,21 @@ PrefabInstance:
       propertyPath: characterPink
       value: 
       objectReference: {fileID: 1865747285}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner1
+      value: 
+      objectReference: {fileID: 1322959016}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner2
+      value: 
+      objectReference: {fileID: 1664971137}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner3
+      value: 
+      objectReference: {fileID: 999678872}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: _stairCollider
@@ -18659,6 +18804,12 @@ PrefabInstance:
       objectReference: {fileID: 1809669336}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
+      propertyPath: brickInstance
+      value: 
+      objectReference: {fileID: 8310287021912188079, guid: 561e096fda54b40efb571030aa3e8085,
+        type: 3}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
       propertyPath: characterBlue
       value: 
       objectReference: {fileID: 1809669336}
@@ -18667,6 +18818,21 @@ PrefabInstance:
       propertyPath: characterPink
       value: 
       objectReference: {fileID: 1865747285}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner1
+      value: 
+      objectReference: {fileID: 1322959016}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner2
+      value: 
+      objectReference: {fileID: 1664971137}
+    - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
+        type: 3}
+      propertyPath: _brickSpawner3
+      value: 
+      objectReference: {fileID: 999678872}
     - target: {fileID: 5099661131053827382, guid: 7f98cebb75df345429cf6d5500b6830c,
         type: 3}
       propertyPath: _stairCollider
@@ -23548,7 +23714,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119f6746559944544992e75da65ee3b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 918292967}
   currentGoldText: {fileID: 9165079381958278315}
   earnedGoldText: {fileID: 2335070418010069229}
   earnedExtraGoldText: {fileID: 9165079382115397273}
@@ -23566,7 +23731,47 @@ MonoBehaviour:
   _getGoldButton: {fileID: 9165079381370426250}
   _getBonusGoldButton: {fileID: 9165079381679495378}
   _bonusXArrow: {fileID: 9165079382252213770}
-  _goldenCoins: []
+  _goldenCoins:
+  - {fileID: 9165079381485941018}
+  - {fileID: 9165079381553030544}
+  - {fileID: 9165079382744142464}
+  - {fileID: 9165079383041746911}
+  - {fileID: 9165079382664071123}
+  - {fileID: 9165079382790249257}
+  - {fileID: 9165079381890653615}
+  - {fileID: 9165079383253570874}
+  - {fileID: 9165079382851353072}
+  - {fileID: 9165079383349537709}
+  - {fileID: 9165079383391291792}
+  - {fileID: 9165079382447040268}
+  - {fileID: 9165079382890269019}
+  - {fileID: 9165079381943543576}
+  - {fileID: 9165079382690477622}
+  - {fileID: 9165079383130723854}
+  - {fileID: 9165079382440728462}
+  - {fileID: 9165079381432144783}
+  - {fileID: 9165079383061514591}
+  - {fileID: 9165079381483986939}
+  - {fileID: 9165079382863688788}
+  - {fileID: 9165079382999516886}
+  - {fileID: 9165079383472588767}
+  - {fileID: 9165079382082403886}
+  - {fileID: 9165079383060732722}
+  - {fileID: 9165079381907601585}
+  - {fileID: 9165079382853805393}
+  - {fileID: 9165079383043152013}
+  - {fileID: 9165079383020754437}
+  - {fileID: 9165079382210237706}
+  - {fileID: 9165079383215812747}
+  - {fileID: 9165079381648944887}
+  - {fileID: 9165079381528727365}
+  - {fileID: 9165079381721678129}
+  - {fileID: 9165079383339057935}
+  - {fileID: 9165079381816363785}
+  - {fileID: 9165079383154641744}
+  - {fileID: 9165079383339659852}
+  - {fileID: 9165079382797373245}
+  - {fileID: 9165079381438705102}
 --- !u!4 &4848184290219999621
 Transform:
   m_ObjectHideFlags: 0
