@@ -5,7 +5,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 
-public class BrickSpawner : Singleton<BrickSpawner>
+public class BrickSpawner : MonoBehaviour
 {
     public GameObject brickPrefab;
     public Transform brickSpawnerParent1;
@@ -28,16 +28,21 @@ public class BrickSpawner : Singleton<BrickSpawner>
     private int _colorValue;
 
     private bool _isUsed;
+    private bool _isTouchBlue;
+    private bool _isTouchGreen;
+    private bool _isTouchPink;
+    private bool _isTouchOrange;
+
+    private void Awake()
+    {
+        gameObject.GetComponent<Collider>().enabled = false;
+    }
 
     private void Update()
     {
         if (GameManager.Instance.CurrentGameState == GameState.MainGame)
         {
             gameObject.GetComponent<Collider>().enabled = true;
-        }
-        else
-        {
-            gameObject.GetComponent<Collider>().enabled = false;
         }
     }
 
@@ -75,8 +80,9 @@ public class BrickSpawner : Singleton<BrickSpawner>
 
         // Zemine basan karakterin rengi ne ise o renkteki brickler görünür olur.
 
-        if (other.CompareTag("Blue"))
+        if (other.CompareTag("Blue") && !_isTouchBlue)
         {
+            _isTouchBlue = true;
             foreach (var brick in bricksList)
             {
                 if (brick.CompareTag("BrickBlue"))
@@ -88,8 +94,9 @@ public class BrickSpawner : Singleton<BrickSpawner>
             }
         }
 
-        if (other.CompareTag("Green"))
+        if (other.CompareTag("Green") && !_isTouchGreen)
         {
+            _isTouchGreen = true;
             foreach (var brick in bricksList)
             {
                 if (brick.CompareTag("BrickGreen"))
@@ -101,8 +108,9 @@ public class BrickSpawner : Singleton<BrickSpawner>
             }
         }
 
-        if (other.CompareTag("Pink"))
+        if (other.CompareTag("Pink") && !_isTouchPink)
         {
+            _isTouchPink = true;
             foreach (var brick in bricksList)
             {
                 if (brick.CompareTag("BrickPink"))
@@ -114,8 +122,9 @@ public class BrickSpawner : Singleton<BrickSpawner>
             }
         }
 
-        if (other.CompareTag("Orange"))
+        if (other.CompareTag("Orange") && !_isTouchOrange)
         {
+            _isTouchOrange = true;
             foreach (var brick in bricksList)
             {
                 if (brick.CompareTag("BrickOrange"))
