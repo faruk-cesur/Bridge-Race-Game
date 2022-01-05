@@ -41,9 +41,7 @@ public class CharacterController : MonoBehaviour
         if (!_isGameFinished)
         {
             var rotation = playerModel.rotation;
-            rotation = Quaternion.Slerp(rotation,
-                rotation = Quaternion.LookRotation((verticalMove * transform.forward + horizontalMove * transform.right)
-                    .normalized), Time.fixedDeltaTime * angleSpeed);
+            rotation = Quaternion.Slerp(rotation, rotation = Quaternion.LookRotation(((verticalMove + 0.001f) * transform.forward + horizontalMove * transform.right).normalized), Time.fixedDeltaTime * angleSpeed);
             playerModel.rotation = rotation;
         }
     }
