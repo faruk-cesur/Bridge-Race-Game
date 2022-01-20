@@ -32,7 +32,7 @@ public class CharacterController : MonoBehaviour
     {
         if (!_isGameFinished)
         {
-            _rigidbody.velocity = new Vector3(horizontalMove, 0f, verticalMove) * runSpeed;
+            _rigidbody.velocity = new Vector3(horizontalMove, 0f, verticalMove) * runSpeed * Time.fixedDeltaTime;
         }
     }
 
