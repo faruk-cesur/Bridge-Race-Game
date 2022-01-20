@@ -28,7 +28,6 @@ public class CharacterGreen : MonoBehaviour
                 CheckCharacterMovement();
                 AnimationManager.Instance.RunAnimation(_animator, _isRunning);
                 characterController.ResetCharacterTransform(_playerModel);
-                //PlayerMovement();
                 break;
             case GameState.LoseGame:
                 break;
@@ -38,13 +37,7 @@ public class CharacterGreen : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
     }
-    /*private void PlayerMovement()
-    {
-        characterController.CharacterRotation(_floatingJoystick.Horizontal, _floatingJoystick.Vertical, _playerModel);
-        characterController.CharacterMovement(_floatingJoystick.Horizontal, _floatingJoystick.Vertical);
-    }*/
-
-
+    
     private void OnTriggerEnter(Collider other)
     {
         characterController.CollectBrickTrigger(other, _brickHeight, _playerModelPelvis, collectedBrickListGreen, BrickColors.Green);

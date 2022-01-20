@@ -30,6 +30,23 @@ public class PlayerController : MonoBehaviour
                 CheckCharacterMovement();
                 AnimationManager.Instance.RunAnimation(_animator, _isRunning);
                 characterController.ResetCharacterTransform(_playerModel);
+                break;
+            case GameState.LoseGame:
+                break;
+            case GameState.WinGame:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        switch (GameManager.Instance.CurrentGameState)
+        {
+            case GameState.StartGame:
+                break;
+            case GameState.MainGame:
                 PlayerMovement();
                 break;
             case GameState.LoseGame:
