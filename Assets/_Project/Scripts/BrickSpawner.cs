@@ -28,10 +28,11 @@ public class BrickSpawner : MonoBehaviour
     private int _colorValue;
 
     private bool _isUsed;
-    private bool _isTouchBlue;
-    private bool _isTouchGreen;
-    private bool _isTouchPink;
-    private bool _isTouchOrange;
+    private bool _isFloorSpawned;
+    public bool isTouchBlue;
+    public bool isTouchGreen;
+    public bool isTouchPink;
+    public bool isTouchOrange;
 
     private void Awake()
     {
@@ -52,23 +53,23 @@ public class BrickSpawner : MonoBehaviour
 
         // Herhangi bir karakter zemine ayak bastığında rastgele pozisyonlarda ve rastgele renklerde 63 adet brick oluşturur.
 
-        if ((other.CompareTag("Blue") || other.CompareTag("Green") || other.CompareTag("Pink") || other.CompareTag("Orange")) && gameObject.CompareTag("BrickSpawner1") && GameManager.Instance.CurrentGameState == GameState.MainGame)
+        if ((other.CompareTag("Blue") || other.CompareTag("Green") || other.CompareTag("Pink") || other.CompareTag("Orange")) && gameObject.CompareTag("BrickSpawner1") && GameManager.Instance.CurrentGameState == GameState.MainGame && !_isFloorSpawned)
         {
-            gameObject.tag = "Untagged"; // Running Once
+            _isFloorSpawned = true; // Running Once
             SpawnPlatformBricks(brickSpawnerParent1);
             CalculateBrickColors();
         }
 
-        if ((other.CompareTag("Blue") || other.CompareTag("Green") || other.CompareTag("Pink") || other.CompareTag("Orange")) && gameObject.CompareTag("BrickSpawner2") && GameManager.Instance.CurrentGameState == GameState.MainGame)
+        if ((other.CompareTag("Blue") || other.CompareTag("Green") || other.CompareTag("Pink") || other.CompareTag("Orange")) && gameObject.CompareTag("BrickSpawner2") && GameManager.Instance.CurrentGameState == GameState.MainGame && !_isFloorSpawned)
         {
-            gameObject.tag = "Untagged"; // Running Once
+            _isFloorSpawned = true; // Running Once
             SpawnPlatformBricks(brickSpawnerParent2);
             CalculateBrickColors();
         }
 
-        if ((other.CompareTag("Blue") || other.CompareTag("Green") || other.CompareTag("Pink") || other.CompareTag("Orange")) && gameObject.CompareTag("BrickSpawner3") && GameManager.Instance.CurrentGameState == GameState.MainGame)
+        if ((other.CompareTag("Blue") || other.CompareTag("Green") || other.CompareTag("Pink") || other.CompareTag("Orange")) && gameObject.CompareTag("BrickSpawner3") && GameManager.Instance.CurrentGameState == GameState.MainGame && !_isFloorSpawned)
         {
-            gameObject.tag = "Untagged"; // Running Once
+            _isFloorSpawned = true; // Running Once
             SpawnPlatformBricks(brickSpawnerParent3);
             CalculateBrickColors();
         }
@@ -80,9 +81,9 @@ public class BrickSpawner : MonoBehaviour
 
         // Zemine basan karakterin rengi ne ise o renkteki brickler görünür olur.
 
-        if (other.CompareTag("Blue") && !_isTouchBlue)
+        if (other.CompareTag("Blue") && !isTouchBlue)
         {
-            _isTouchBlue = true;
+            isTouchBlue = true;
             foreach (var brick in bricksList)
             {
                 if (brick.CompareTag("BrickBlue"))
@@ -94,9 +95,9 @@ public class BrickSpawner : MonoBehaviour
             }
         }
 
-        if (other.CompareTag("Green") && !_isTouchGreen)
+        if (other.CompareTag("Green") && !isTouchGreen)
         {
-            _isTouchGreen = true;
+            isTouchGreen = true;
             foreach (var brick in bricksList)
             {
                 if (brick.CompareTag("BrickGreen"))
@@ -108,9 +109,9 @@ public class BrickSpawner : MonoBehaviour
             }
         }
 
-        if (other.CompareTag("Pink") && !_isTouchPink)
+        if (other.CompareTag("Pink") && !isTouchPink)
         {
-            _isTouchPink = true;
+            isTouchPink = true;
             foreach (var brick in bricksList)
             {
                 if (brick.CompareTag("BrickPink"))
@@ -122,9 +123,9 @@ public class BrickSpawner : MonoBehaviour
             }
         }
 
-        if (other.CompareTag("Orange") && !_isTouchOrange)
+        if (other.CompareTag("Orange") && !isTouchOrange)
         {
-            _isTouchOrange = true;
+            isTouchOrange = true;
             foreach (var brick in bricksList)
             {
                 if (brick.CompareTag("BrickOrange"))

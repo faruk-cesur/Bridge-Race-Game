@@ -1209,6 +1209,7 @@ MonoBehaviour:
   _playerModelPelvis: {fileID: 1278638645605994227}
   _floatingJoystick: {fileID: 0}
   _animator: {fileID: 1278638645615026483}
+  _camera: {fileID: 0}
 --- !u!114 &7421550142100082083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1226,7 +1227,7 @@ MonoBehaviour:
   characterPink: {fileID: 0}
   characterOrange: {fileID: 0}
   runSpeed: 250
-  angleSpeed: 5
+  angleSpeed: 25
 --- !u!114 &8627836417822463572
 MonoBehaviour:
   m_ObjectHideFlags: 0
