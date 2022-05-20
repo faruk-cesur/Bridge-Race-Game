@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Cinemachine;
 using DG.Tweening;
 using UnityEngine;
 
@@ -14,9 +15,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _playerModelPelvis;
     [SerializeField] private FloatingJoystick _floatingJoystick;
     [SerializeField] private Animator _animator;
+    [SerializeField] private CinemachineVirtualCamera _camera;
 
     private float _brickHeight = 0.5f;
+    private float _startingCameraFOV;
     private bool _isRunning;
+
+    private void Start()
+    {
+        _startingCameraFOV = _camera.m_Lens.FieldOfView;
+    }
 
     private void Update()
     {
@@ -30,6 +38,7 @@ public class PlayerController : MonoBehaviour
                 CheckCharacterMovement();
                 AnimationManager.Instance.RunAnimation(_animator, _isRunning);
                 characterController.ResetCharacterTransform(_playerModel);
+                SetCameraFOVByBrickNumber();
                 break;
             case GameState.LoseGame:
                 break;
@@ -78,5 +87,10 @@ public class PlayerController : MonoBehaviour
     private void CheckCharacterMovement()
     {
         characterController.CheckCharacterMovement(out _isRunning);
+    }
+
+    private void SetCameraFOVByBrickNumber()
+    {
+        _camera.m_Lens.FieldOfView = Mathf.Lerp(_camera.m_Lens.FieldOfView, _startingCameraFOV + collectedBrickListBlue.Count, 2 * Time.deltaTime);
     }
 }

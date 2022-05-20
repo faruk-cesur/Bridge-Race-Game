@@ -1166,9 +1166,9 @@ GameObject:
   - component: {fileID: 7421550142100082093}
   - component: {fileID: 7421550142100082082}
   - component: {fileID: 7421550142100082083}
+  - component: {fileID: 8627836417822463572}
   - component: {fileID: 840544637545503740}
   - component: {fileID: 7644716707308483985}
-  - component: {fileID: 8627836417822463572}
   m_Layer: 10
   m_Name: Player
   m_TagString: Blue
@@ -1227,6 +1227,19 @@ MonoBehaviour:
   characterOrange: {fileID: 0}
   runSpeed: 250
   angleSpeed: 5
+--- !u!114 &8627836417822463572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7421550142100082080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415d6a8413cca484889f1fbc865c6d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _raycastDown: {fileID: 289293573210135158}
 --- !u!54 &840544637545503740
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1257,16 +1270,3 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &8627836417822463572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7421550142100082080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 415d6a8413cca484889f1fbc865c6d5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _raycastDown: {fileID: 289293573210135158}

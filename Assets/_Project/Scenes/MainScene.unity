@@ -22412,7 +22412,7 @@ PrefabInstance:
     - target: {fileID: 3091151011418832344, guid: f167accd2b92ea443ace0d19c12899cb,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3091151011418832347, guid: f167accd2b92ea443ace0d19c12899cb,
         type: 3}
@@ -22442,7 +22442,7 @@ PrefabInstance:
     - target: {fileID: 558550297364704148, guid: d05f8dd0936775d4fab5a9e641d844ad,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 558550297364704151, guid: d05f8dd0936775d4fab5a9e641d844ad,
         type: 3}
@@ -23435,6 +23435,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7421550142100082082, guid: 989a55ceff637504d8a6de8c541124dd,
+        type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 422781833}
     - target: {fileID: 7421550142100082082, guid: 989a55ceff637504d8a6de8c541124dd,
         type: 3}
       propertyPath: _floatingJoystick
