@@ -11,13 +11,11 @@ public class CharacterController : MonoBehaviour
     [HideInInspector] public CharacterGreen characterGreen;
     [HideInInspector] public CharacterPink characterPink;
     [HideInInspector] public CharacterOrange characterOrange;
+    [HideInInspector] public bool isGameFinished;
 
     public float runSpeed;
-    public float angleSpeed;
-
+    public float rotationSpeed;
     private Rigidbody _rigidbody;
-    private bool _isGameStarted;
-    private bool _isGameFinished;
 
     private void Start()
     {
@@ -28,32 +26,11 @@ public class CharacterController : MonoBehaviour
         characterOrange = GetComponent<CharacterOrange>();
     }
 
-    public void CharacterMovement(float horizontalMove, float verticalMove)
+    public void CharacterRotation(Vector3 rigidbodyVelocity, Transform playerModel)
     {
-        if (!_isGameFinished)
+        if (!isGameFinished)
         {
-            _rigidbody.velocity = new Vector3(horizontalMove, 0f, verticalMove) * runSpeed * Time.fixedDeltaTime;
-        }
-    }
-
-    public void CharacterRotation(float horizontalMove, float verticalMove, Transform playerModel)
-    {
-        if (!_isGameFinished)
-        {
-            var rotation = playerModel.rotation;
-            rotation = Quaternion.Slerp(rotation, Quaternion.LookRotation(((verticalMove + 0.001f) * transform.forward + horizontalMove * transform.right).normalized), Time.fixedDeltaTime * angleSpeed);
-            playerModel.rotation = rotation;
-        }
-    }
-
-    public void ResetCharacterTransform(Transform playerModel)
-    {
-        if (!_isGameStarted)
-        {
-            _isGameStarted = true;
-            var transform1 = playerModel.transform;
-            transform1.localRotation = Quaternion.identity;
-            transform1.localPosition = new Vector3(0, 0, 0);
+            playerModel.rotation = Quaternion.Slerp(playerModel.rotation, Quaternion.LookRotation(rigidbodyVelocity), Time.fixedDeltaTime * rotationSpeed);
         }
     }
 
@@ -91,7 +68,7 @@ public class CharacterController : MonoBehaviour
     {
         if (other.CompareTag("FinishLine"))
         {
-            _isGameFinished = true;
+            isGameFinished = true;
             gameObject.GetComponent<Collider>().enabled = false;
             gameObject.transform.DOMove(new Vector3(0, transform.position.y + 0.20f, transform.position.z + 1.5f), 0.5f);
             playerModel.localRotation = Quaternion.Euler(0, 180, 0);
@@ -105,7 +82,7 @@ public class CharacterController : MonoBehaviour
 
     public void CheckCharacterMovement(out bool isRunning)
     {
-        if (_rigidbody.velocity.x == 0 && _rigidbody.velocity.y == 0 && _rigidbody.velocity.z == 0)
+        if (_rigidbody.velocity == Vector3.zero)
         {
             isRunning = false;
         }

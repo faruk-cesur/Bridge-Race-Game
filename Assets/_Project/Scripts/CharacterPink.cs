@@ -6,10 +6,8 @@ using UnityEngine;
 public class CharacterPink : MonoBehaviour
 {
     public CharacterController characterController;
-
     public List<Brick> collectedBrickListPink;
 
-    [SerializeField] private Transform _playerModel;
     [SerializeField] private Transform _playerModelPelvis;
     [SerializeField] private Animator _animator;
 
@@ -27,7 +25,6 @@ public class CharacterPink : MonoBehaviour
             case GameState.MainGame:
                 CheckCharacterMovement();
                 AnimationManager.Instance.RunAnimation(_animator, _isRunning);
-                characterController.ResetCharacterTransform(_playerModel);
                 break;
             case GameState.LoseGame:
                 break;

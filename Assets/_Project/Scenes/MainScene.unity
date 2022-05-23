@@ -8444,6 +8444,10 @@ MonoBehaviour:
   greenBricksPositionList: []
   pinkBricksPositionList: []
   orangeBricksPositionList: []
+  isTouchBlue: 0
+  isTouchGreen: 0
+  isTouchPink: 0
+  isTouchOrange: 0
 --- !u!65 &999678873
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11534,6 +11538,10 @@ MonoBehaviour:
   greenBricksPositionList: []
   pinkBricksPositionList: []
   orangeBricksPositionList: []
+  isTouchBlue: 0
+  isTouchGreen: 0
+  isTouchPink: 0
+  isTouchOrange: 0
 --- !u!65 &1322959017
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15815,6 +15823,10 @@ MonoBehaviour:
   greenBricksPositionList: []
   pinkBricksPositionList: []
   orangeBricksPositionList: []
+  isTouchBlue: 0
+  isTouchGreen: 0
+  isTouchPink: 0
+  isTouchOrange: 0
 --- !u!65 &1664971138
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21492,6 +21504,11 @@ PrefabInstance:
     - target: {fileID: 6973746605742696745, guid: 698cf10afa5b1384d979b54f5dd671e4,
         type: 3}
       propertyPath: runSpeed
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973746605742696745, guid: 698cf10afa5b1384d979b54f5dd671e4,
+        type: 3}
+      propertyPath: rotationSpeed
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6973746605742696746, guid: 698cf10afa5b1384d979b54f5dd671e4,
@@ -22417,6 +22434,11 @@ PrefabInstance:
     - target: {fileID: 3091151011418832347, guid: f167accd2b92ea443ace0d19c12899cb,
         type: 3}
       propertyPath: runSpeed
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091151011418832347, guid: f167accd2b92ea443ace0d19c12899cb,
+        type: 3}
+      propertyPath: rotationSpeed
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -22447,6 +22469,11 @@ PrefabInstance:
     - target: {fileID: 558550297364704151, guid: d05f8dd0936775d4fab5a9e641d844ad,
         type: 3}
       propertyPath: runSpeed
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 558550297364704151, guid: d05f8dd0936775d4fab5a9e641d844ad,
+        type: 3}
+      propertyPath: rotationSpeed
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 558550297364704153, guid: d05f8dd0936775d4fab5a9e641d844ad,

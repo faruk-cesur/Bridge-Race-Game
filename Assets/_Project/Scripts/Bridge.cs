@@ -18,9 +18,7 @@ public class Bridge : MonoBehaviour
     private GameObject _lastCollectedBrickGreen;
     private GameObject _lastCollectedBrickPink;
     private GameObject _lastCollectedBrickOrange;
-
     private Vector3 _nextBridgePosition;
-
     private bool _isCharacterTouch;
 
     private void Awake()

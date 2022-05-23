@@ -23,13 +23,11 @@ public class AnimationManager : MonoBehaviour
     {
         if (!isRunning)
         {
-            animator.applyRootMotion = false;
             animator.SetBool("Idle", true);
             animator.SetBool("Run", false);
         }
         else
         {
-            animator.applyRootMotion = false;
             animator.SetBool("Idle", false);
             animator.SetBool("Run", true);
         }

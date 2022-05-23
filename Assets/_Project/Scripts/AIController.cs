@@ -18,10 +18,8 @@ public class AIController : MonoBehaviour
     [SerializeField] private BrickSpawner _brickSpawner2;
     [SerializeField] private BrickSpawner _brickSpawner3;
     [SerializeField] private BrickSpawner _currentBrickSpawner;
-
     [SerializeField] private CharacterController _characterController;
     private Rigidbody _rigidbody;
-
     private Floor _currentFloor;
     private Vector3 _randomBrickPosition;
     private List<Vector3> _currentBrickPositionList;
@@ -40,6 +38,7 @@ public class AIController : MonoBehaviour
                 break;
             case GameState.MainGame:
                 AIMoveToBricks();
+                _characterController.CharacterRotation(_rigidbody.velocity, transform);
                 break;
             case GameState.LoseGame:
                 break;
@@ -123,7 +122,7 @@ public class AIController : MonoBehaviour
             _currentBrickPositionList = _currentBrickSpawner.orangeBricksPositionList;
             GenerateRandomBrickPosition();
         }
-        
+
         Brick brick = other.GetComponentInParent<Brick>();
         if (brick)
         {
@@ -156,6 +155,6 @@ public class AIController : MonoBehaviour
     private void AIMoveToBricks()
     {
         var difference = _randomBrickPosition - transform.position;
-        _rigidbody.velocity = difference.normalized * Time.fixedDeltaTime * 250;
+        _rigidbody.velocity = difference.normalized * (Time.fixedDeltaTime * _characterController.runSpeed);
     }
 }

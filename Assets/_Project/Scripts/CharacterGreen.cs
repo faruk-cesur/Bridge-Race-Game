@@ -6,10 +6,8 @@ using UnityEngine;
 public class CharacterGreen : MonoBehaviour
 {
     public CharacterController characterController;
-
     public List<Brick> collectedBrickListGreen;
 
-    [SerializeField] private Transform _playerModel;
     [SerializeField] private Transform _playerModelPelvis;
     [SerializeField] private Animator _animator;
 
@@ -27,7 +25,6 @@ public class CharacterGreen : MonoBehaviour
             case GameState.MainGame:
                 CheckCharacterMovement();
                 AnimationManager.Instance.RunAnimation(_animator, _isRunning);
-                characterController.ResetCharacterTransform(_playerModel);
                 break;
             case GameState.LoseGame:
                 break;
@@ -37,7 +34,7 @@ public class CharacterGreen : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
         characterController.CollectBrickTrigger(other, _brickHeight, _playerModelPelvis, collectedBrickListGreen, BrickColors.Green);

@@ -511,7 +511,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: fa7f36c71b9e8fa4798df3a931c2fd92, type: 3}
   m_Controller: {fileID: 9100000, guid: d3d4674ddb5a38e42bfdc481576124d3, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -1226,8 +1226,9 @@ MonoBehaviour:
   characterGreen: {fileID: 0}
   characterPink: {fileID: 0}
   characterOrange: {fileID: 0}
+  isGameFinished: 0
   runSpeed: 250
-  angleSpeed: 25
+  rotationSpeed: 250
 --- !u!114 &8627836417822463572
 MonoBehaviour:
   m_ObjectHideFlags: 0

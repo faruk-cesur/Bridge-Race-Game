@@ -8,7 +8,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public CharacterController characterController;
-
     public List<Brick> collectedBrickListBlue;
 
     [SerializeField] private Transform _playerModel;
@@ -17,12 +16,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private CinemachineVirtualCamera _camera;
 
+    private Rigidbody _rigidbody;
     private float _brickHeight = 0.5f;
     private float _startingCameraFOV;
     private bool _isRunning;
 
     private void Start()
     {
+        _rigidbody = GetComponent<Rigidbody>();
         _startingCameraFOV = _camera.m_Lens.FieldOfView;
     }
 
@@ -37,7 +38,6 @@ public class PlayerController : MonoBehaviour
             case GameState.MainGame:
                 CheckCharacterMovement();
                 AnimationManager.Instance.RunAnimation(_animator, _isRunning);
-                characterController.ResetCharacterTransform(_playerModel);
                 SetCameraFOVByBrickNumber();
                 break;
             case GameState.LoseGame:
@@ -71,10 +71,13 @@ public class PlayerController : MonoBehaviour
     {
         if (_isRunning)
         {
-            characterController.CharacterRotation(_floatingJoystick.Horizontal, _floatingJoystick.Vertical, _playerModel);
+            characterController.CharacterRotation(_rigidbody.velocity, _playerModel);
         }
 
-        characterController.CharacterMovement(_floatingJoystick.Horizontal, _floatingJoystick.Vertical);
+        if (!characterController.isGameFinished)
+        {
+            _rigidbody.velocity = new Vector3(_floatingJoystick.Horizontal, 0f, _floatingJoystick.Vertical).normalized * (characterController.runSpeed * Time.fixedDeltaTime);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
