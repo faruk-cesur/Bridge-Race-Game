@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 1622071587433885792}
   - component: {fileID: 7679988551647165896}
   - component: {fileID: 804322815164617637}
+  - component: {fileID: 3866888564657272951}
   m_Layer: 12
   m_Name: CharacterPink
   m_TagString: Pink
@@ -82,7 +83,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 558550297364704151}
   collectedBrickListPink: []
-  _playerModel: {fileID: 8106577269995219147}
   _playerModelPelvis: {fileID: 8106577269995219143}
   _animator: {fileID: 2641456467727394600}
 --- !u!114 &5427833610312681660
@@ -102,6 +102,7 @@ MonoBehaviour:
   _brickSpawner3: {fileID: 0}
   _currentBrickSpawner: {fileID: 0}
   _characterController: {fileID: 558550297364704151}
+  _navMeshAgent: {fileID: 3866888564657272951}
 --- !u!114 &558550297364704151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,8 +119,9 @@ MonoBehaviour:
   characterGreen: {fileID: 0}
   characterPink: {fileID: 0}
   characterOrange: {fileID: 0}
-  runSpeed: 5
-  angleSpeed: 5
+  isGameFinished: 0
+  runSpeed: 250
+  rotationSpeed: 5
 --- !u!114 &1622071587433885792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +165,28 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!195 &3866888564657272951
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558550297364704148}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &7295054014167841858
 GameObject:
   m_ObjectHideFlags: 0

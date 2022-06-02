@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cinemachine.Utility;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
 public class AIController : MonoBehaviour
@@ -19,6 +20,7 @@ public class AIController : MonoBehaviour
     [SerializeField] private BrickSpawner _brickSpawner3;
     [SerializeField] private BrickSpawner _currentBrickSpawner;
     [SerializeField] private CharacterController _characterController;
+    [SerializeField] private NavMeshAgent _navMeshAgent;
     private Rigidbody _rigidbody;
     private Floor _currentFloor;
     private Vector3 _randomBrickPosition;
@@ -27,7 +29,8 @@ public class AIController : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _currentBrickSpawner = _brickSpawner1;
+        _currentBrickSpawner = _brickSpawner2;
+        _navMeshAgent.SetDestination(_currentBrickSpawner.transform.position);
     }
 
     private void FixedUpdate()
@@ -37,7 +40,7 @@ public class AIController : MonoBehaviour
             case GameState.StartGame:
                 break;
             case GameState.MainGame:
-                AIMoveToBricks();
+                //AIMoveToBricks();
                 _characterController.CharacterRotation(_rigidbody.velocity, transform);
                 break;
             case GameState.LoseGame:
@@ -123,38 +126,43 @@ public class AIController : MonoBehaviour
             GenerateRandomBrickPosition();
         }
 
-        Brick brick = other.GetComponentInParent<Brick>();
-        if (brick)
-        {
-            // todo listeden çıkarma doğru çalışmıyor 
-            if (brick.color == BrickColors.Pink && gameObject.CompareTag("Pink"))
-            {
-                _currentBrickPositionList.Remove(_randomBrickPosition);
-                GenerateRandomBrickPosition();
-            }
-
-            if (brick.color == BrickColors.Green && gameObject.CompareTag("Green"))
-            {
-                _currentBrickPositionList.Remove(_randomBrickPosition);
-                GenerateRandomBrickPosition();
-            }
-
-            if (brick.color == BrickColors.Orange && gameObject.CompareTag("Orange"))
-            {
-                _currentBrickPositionList.Remove(_randomBrickPosition);
-                GenerateRandomBrickPosition();
-            }
-        }
+        // Brick brick = other.GetComponentInParent<Brick>();
+        // if (brick)
+        // {
+        //     // todo listeden çıkarma doğru çalışmıyor 
+        //     if (brick.color == BrickColors.Pink && gameObject.CompareTag("Pink"))
+        //     {
+        //         _currentBrickPositionList.Remove(_randomBrickPosition);
+        //         GenerateRandomBrickPosition();
+        //     }
+        //
+        //     if (brick.color == BrickColors.Green && gameObject.CompareTag("Green"))
+        //     {
+        //         _currentBrickPositionList.Remove(_randomBrickPosition);
+        //         GenerateRandomBrickPosition();
+        //     }
+        //
+        //     if (brick.color == BrickColors.Orange && gameObject.CompareTag("Orange"))
+        //     {
+        //         _currentBrickPositionList.Remove(_randomBrickPosition);
+        //         GenerateRandomBrickPosition();
+        //     }
+        // }
     }
 
     private void GenerateRandomBrickPosition()
     {
-        _randomBrickPosition = _currentBrickPositionList[Random.Range(0, _currentBrickPositionList.Count - 1)];
+        _randomBrickPosition = _currentBrickPositionList[Random.Range(0, _currentBrickPositionList.Count)];
     }
 
     private void AIMoveToBricks()
     {
         var difference = _randomBrickPosition - transform.position;
         _rigidbody.velocity = difference.normalized * (Time.fixedDeltaTime * _characterController.runSpeed);
+
+        if (difference.sqrMagnitude <= 0.1 * 0.1)
+        {
+            GenerateRandomBrickPosition();
+        }
     }
 }
