@@ -29,8 +29,8 @@ public class AIController : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _currentBrickSpawner = _brickSpawner2;
-        _navMeshAgent.SetDestination(_currentBrickSpawner.transform.position);
+        _currentBrickSpawner = _brickSpawner1;
+        //_navMeshAgent.SetDestination(_currentBrickSpawner.transform.position);
     }
 
     private void FixedUpdate()
@@ -40,7 +40,7 @@ public class AIController : MonoBehaviour
             case GameState.StartGame:
                 break;
             case GameState.MainGame:
-                //AIMoveToBricks();
+                AIMoveToBricks();
                 _characterController.CharacterRotation(_rigidbody.velocity, transform);
                 break;
             case GameState.LoseGame:
